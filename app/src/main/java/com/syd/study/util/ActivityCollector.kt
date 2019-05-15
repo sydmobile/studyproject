@@ -11,16 +11,16 @@ import java.lang.ref.WeakReference
  * @version 1.0
  */
 
-object ActivityCollector{
+object ActivityCollector {
     private const val TAG = "ActivityCollector"
 
     private val activityList = ArrayList<WeakReference<Activity>?>()
 
-    fun size():Int{
+    fun size(): Int {
         return activityList.size
     }
 
-    fun add(weakReference: WeakReference<Activity>?){
+    fun add(weakReference: WeakReference<Activity>?) {
         activityList.add(weakReference)
     }
 
