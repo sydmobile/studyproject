@@ -10,11 +10,6 @@ public class StudyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         myApplication = this;
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     public static StudyApplication getAppInstance() {

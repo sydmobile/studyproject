@@ -1,7 +1,7 @@
 package com.syd.study.viewstub;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.TextView;
@@ -20,7 +20,7 @@ public class ViewStubActivity extends BaseActivity {
 
     public void initView(){
         TextView textView = findViewById(R.id.tv);
-        ViewStub viewStub = findViewById(R.id.vs);
+        final ViewStub viewStub = findViewById(R.id.vs);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

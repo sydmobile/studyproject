@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">PersonalStudy</string>
+    <string-array name="rlv_data">
+        <item>Android</item>
+        <item>Java</item>
+        <item>iOS</item>
+        <item>C++</item>
+        <item>Ruby</item>
+        <item>flutter</item>
+        <item>Web</item>
+        <item>PHP</item>
+        <item>C</item>
+    </string-array>
+    <string name="rlv">RecyclerView</string>
+    <string name="net">net_request</string>
+    <string name="lv">listView</string>
+    <string name="test">测试使用</string>
+    <!--打开蓝牙-->
+    <string name="open_ble">open_bluetooth</string>
+    <!--获取配对列表-->
+    <string name="bond_devices">bonded_devices</string>
+    <!--启用可检测-->
+    <string name="request_discovery">request_discovery</string>
+    <!--开启发现蓝牙设备-->
+    <string name="www">d</string>
+    <string name="discovery">discovery</string>
+    <string name="fw">sw</string>
+    <string name="test_data">测试数据</string>
 </resources>
