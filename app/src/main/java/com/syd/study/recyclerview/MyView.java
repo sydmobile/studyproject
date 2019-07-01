@@ -5,6 +5,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -64,6 +66,7 @@ public class MyView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawRect(rect,paint);
+        Drawable drawable;
         Log.e("onDraw","===");
     }
 

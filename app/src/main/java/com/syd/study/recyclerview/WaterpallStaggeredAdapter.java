@@ -58,7 +58,6 @@ public class WaterpallStaggeredAdapter extends RecyclerView.Adapter<WaterpallSta
     @Override
     public WaterpallViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = mInflater.inflate(R.layout.item_rlv,viewGroup,false);
-
         return new WaterpallViewHolder(view);
     }
 
