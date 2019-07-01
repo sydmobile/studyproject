@@ -1,7 +1,6 @@
 package com.syd.study;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -114,8 +113,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent3);
                 break;
             case R.id.bt_lambda:
-                Intent intent1 = new Intent(this, LambdaActivity.class);
-                startActivity(intent1);
+                Intent intent5 = new Intent(this, LambdaActivity.class);
+                startActivity(intent5);
                 break;
             // 测试使用
             case R.id.tv_test:
