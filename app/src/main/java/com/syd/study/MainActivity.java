@@ -7,13 +7,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewStub;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.syd.study.lambda.LambdaActivity;
 import com.syd.study.viewstub.ViewStubActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private Button btLambda;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,9 +24,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initView();
     }
 
+    private static final String TAG = "MainActivity";
+
     public void initView() {
         TextView textView = findViewById(R.id.tv);
         textView.setOnClickListener(this);
+        btLambda = findViewById(R.id.bt_lambda);
+        btLambda.setOnClickListener(this);
+
     }
 
     @Override
@@ -46,6 +54,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tv:
                 Intent intent = new Intent(this, ViewStubActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.bt_lambda:
+                Intent intent1 = new Intent(this, LambdaActivity.class);
+                startActivity(intent1);
                 break;
         }
     }
