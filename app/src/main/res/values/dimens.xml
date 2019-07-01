@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--宽度-->
+    <!--左右间距-->
+    <!--按照 Material Design 组件间距应为 8 的倍数-->
+    <dimen name="width_left_right">16dp</dimen>
+
+
+
+    <!--字体大小-->
+    <!--按照 Material Design 字体间隔应为 4 的倍数-->
+    <!--大标题-->
+    <dimen name="textSize_headline">24sp</dimen>
+    <!--标题-->
+    <dimen name="textSize_title">20sp</dimen>
+    <!--副标题-->
+    <dimen name="textSize_subhead">16sp</dimen>
+    <!--body-->
+    <dimen name="textSize_body">12sp</dimen>
+</resources>

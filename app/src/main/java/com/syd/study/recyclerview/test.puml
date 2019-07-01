@@ -1,0 +1,32 @@
+@startuml
+
+
+class ListView
+class GridView
+
+class Spinner
+class Gallery
+
+class AdapterViewFlipper
+class StackView
+
+class ExpandableListView
+
+ViewGroup <|-- AdapterView
+AdapterView <|-- AbsListView
+AdapterView <|-- AbsSpinner
+AdapterView <|-- AdapterAnimator
+
+AbsListView <|-- ListView
+AbsListView <|-- GridView
+
+ListView <|-- ExpandableListView
+
+AbsSpinner <|-- Spinner
+AbsSpinner <|-- Gallery
+
+AdapterAnimator <|-- AdapterViewFlipper
+AdapterAnimator <|-- StackView
+
+
+@enduml

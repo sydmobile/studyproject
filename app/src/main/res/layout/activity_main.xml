@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -10,17 +9,69 @@
 
     <TextView
         style="@style/Widget.AppCompat.Button"
+        android:id="@+id/tv_test"
+        android:background="@drawable/button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/test"
+        android:textColor="#FFFFFF"
+        android:gravity="center" />
+
+    <TextView
+        style="@style/Widget.AppCompat.Button"
         android:id="@+id/tv"
         android:background="@drawable/button"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="60dp"
         android:text="Hello World!"
         android:textColor="#FFFFFF"
         android:gravity="center" />
-    <Button
+
+    <TextView
+        style="@style/Widget.AppCompat.Button"
+        android:id="@+id/tv_rlv"
         android:background="@drawable/button"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="60dp"
+        android:text="@string/rlv"
+        android:textColor="#FFFFFF"
+        android:gravity="center" />
+
+    <TextView
+        style="@style/Widget.AppCompat.Button"
+        android:id="@+id/tv_net"
+        android:background="@drawable/button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/net"
+        android:textColor="#FFFFFF"
+        android:gravity="center" />
+
+    <TextView
+        style="@style/Widget.AppCompat.Button"
+        android:id="@+id/tv_list"
+        android:background="@drawable/button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/lv"
+        android:textColor="#FFFFFF"
+        android:gravity="center" />
+
+    <TextView
+        style="@style/Widget.AppCompat.Button"
+        android:id="@+id/tv_net_test"
+        android:background="@drawable/button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/lv"
+        android:textColor="#FFFFFF"
+        android:gravity="center" />
+
+    <com.syd.study.recyclerview.MyView
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <Button
         android:layout_width="match_parent"
