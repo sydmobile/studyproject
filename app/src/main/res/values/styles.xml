@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="actionOverflowMenuStyle">@style/OptionMenu</item>
     </style>
 
     <style name="ButtonTheme_Common" parent="@style/Widget.AppCompat.Button">
@@ -14,6 +15,10 @@
         <item name="android:textColor">@color/colorWhite</item>
         <item name="android:padding">10dp</item>
         <item name="android:textSize">@dimen/textSize_body</item>
+    </style>
+
+    <style name="OptionMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:popupBackground">@color/colorAccent</item>
     </style>
 
 </resources>

@@ -7,7 +7,10 @@ import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 
+import android.util.Log;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -45,13 +48,26 @@ public  class ListViewActivity extends BaseActivity {
         init();
     }
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.menu,menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        return super.onContextItemSelected(item);
+    }
+
     public void init(){
         List<String> list = new ArrayList<>();
         for (int i= 0 ;i<30;i++){
             list.add("string"+i);
         }
+        registerForContextMenu(lv);
         // 创建 ArrayAdapter 对象
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,list);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,list);
 //        AdapterCommon<String> adapterCommon = new AdapterCommon<>(list, this, new AdapterCommon.CallBack() {
 //            @Override
 //            public View getView(int position, View converView, ViewGroup parent, AdapterCommon adapterCommon) {
@@ -60,7 +76,7 @@ public  class ListViewActivity extends BaseActivity {
 //                return null;
 //            }
 //        });
-        lv.setAdapter(adapter);
+//        lv.setAdapter(adapter);
 
 //        String [] name = new String[]{"wwww","aaa","wwwww","rrrr"};
 //        String [] address = new String[]{"北京","上海","广东","深圳"};
@@ -80,6 +96,11 @@ public  class ListViewActivity extends BaseActivity {
 //        lv.setAdapter(mSimpleAdapter);
         // 需要布局和数据一一对应，在创建适配器的填入参数的时候比较繁琐
 
+        lv.setAdapter(new MyAdapter(this,list));
+
+        // 页面可以看到几个 item ，第一次就执行 getView多少次。当再出现一个 item 的时候再调用一次 getView
+        // contentView 的个数为页面可见的个数 +1 。然后不可见的 item 放入回收栈中，等待下一次回收使用。
+
 
     }
 
@@ -87,9 +108,9 @@ public  class ListViewActivity extends BaseActivity {
         // 用来填充布局
         private LayoutInflater mInflater;
         private Context context;
-        private ArrayList<HashMap<String,Object>> listItem;
+        private List<String> listItem;
         // 构造方法
-        public MyAdapter(Context context,ArrayList<HashMap<String,Object>> listItem){
+        public MyAdapter(Context context,List<String> listItem){
             this.context = context;
             this.listItem = listItem;
             this.mInflater = LayoutInflater.from(context);
@@ -112,9 +133,15 @@ public  class ListViewActivity extends BaseActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            return null;
+            if (convertView == null){
+                convertView = mInflater.inflate(R.layout.item_rlv,parent,false);
+            }
+            Log.e("getView","convertView:"+convertView.toString());
+            return convertView;
         }
     }
+
+//    class MyViewHolder
 
 
 }

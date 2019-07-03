@@ -55,6 +55,8 @@ public class RecyclerViewActivity extends BaseActivity {
 //        rlv.setAdapter(new NormalRecyclerViewAdapter1(this,getResources().getStringArray(R.array.rlv_data)));
 //        rlv.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 //        rlv.addItemDecoration(new CustomItemDecoration(this,DividerItemDecoration.VERTICAL));
+
+
         List<String> listDatas = new ArrayList<>();
         for (int i = 0 ;i<30;i++){
             listDatas.add("条目"+i);

@@ -17,6 +17,11 @@ RecyclerView 比 ListView 更加高级具有灵活性。
 - CardView 扩展 FrameLayout类并能够显示卡片内的信息，这些信息在整个平台中拥有一致的呈现方式。CarView 小部件可以拥有阴影和圆角。
 
 
+1. RecyclerView 基本用法
+
+2. 封装一个基本的 Adapter 
+
+3. 介绍一下分隔线 itemDecorView
 
 
 

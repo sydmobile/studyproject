@@ -2,22 +2,25 @@ package com.syd.study;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewStub;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.syd.study.lambda.LambdaActivity;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.syd.study.lambda.LambdaActivity;
 import com.syd.study.net.NetActivity;
 import com.syd.study.recyclerview.ListViewActivity;
 import com.syd.study.recyclerview.RecyclerViewActivity;
+import com.syd.study.recyclerview.RecyclerViewActivityOne;
 import com.syd.study.testuses.TestActivity;
 import com.syd.study.viewstub.ViewStubActivity;
 
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView tvTest;
     @BindView(R.id.tv_net_test)
     TextView tvNetTest;
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +56,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
         initView();
     }
-
-    private static final String TAG = "MainActivity";
 
     public void initView() {
         TextView textView = findViewById(R.id.tv);
@@ -78,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         Toast.makeText(this, item.getTitle().toString(), Toast.LENGTH_SHORT).show();
 
-
         return true;
     }
 
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             // recyclerView
             case R.id.tv_rlv:
-                Intent intent1 = new Intent(this, RecyclerViewActivity.class);
+                Intent intent1 = new Intent(this, RecyclerViewActivityOne.class);
                 startActivity(intent1);
                 break;
             case R.id.tv_net:
@@ -121,10 +122,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent4 = new Intent(this, TestActivity.class);
                 startActivity(intent4);
                 break;
-                // testNet
+            // testNet
             case R.id.tv_net_test:
-//               RequestQueue requestQueue =  Volley.newRequestQueue(this);
-//               requestQueue.add(new StringRequest(Request.Method.POST,))
+                String url = "http://192.168.1.100:8080/nav/hospitals";
+                Log.e("start", System.currentTimeMillis() + "");
+                RequestQueue requestQueue = Volley.newRequestQueue(this);
+                requestQueue.add(new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.e("onResponse", System.currentTimeMillis() + response);
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("onResponse", "error");
+                    }
+                }));
+                break;
         }
     }
 }

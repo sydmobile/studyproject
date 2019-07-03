@@ -14,6 +14,7 @@
     <string name="rlv">RecyclerView</string>
     <string name="net">net_request</string>
     <string name="lv">listView</string>
+    <string name="net_test">联网测试</string>
     <string name="test">测试使用</string>
     <!--打开蓝牙-->
     <string name="open_ble">open_bluetooth</string>
