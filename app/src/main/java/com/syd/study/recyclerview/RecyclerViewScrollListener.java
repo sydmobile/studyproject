@@ -21,6 +21,8 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
  */
 public abstract class RecyclerViewScrollListener extends OnScrollListener implements OnLoadMoreListener<String> {
     // https://blog.csdn.net/cym492224103/column/info/baserecyclerview
+
+    // https://blog.csdn.net/wangkeke1860/article/details/51577158
     protected layoutManagerType mLayoutManagerType;
     private boolean mIsLoadingMore = false;
     private int[] lastPositions;
@@ -34,7 +36,7 @@ public abstract class RecyclerViewScrollListener extends OnScrollListener implem
     public void setLoadingMore(boolean loadingMore) {
         mIsLoadingMore = loadingMore;
     }
-
+    // 滑动的时候调用
     @Override
     public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled(recyclerView, dx, dy);
@@ -59,6 +61,7 @@ public abstract class RecyclerViewScrollListener extends OnScrollListener implem
             case LINEAR_LAYOUT:
                 assert layoutManager != null;
                 lastVisibleItemPosition = ((LinearLayoutManager) layoutManager).findLastVisibleItemPosition();
+
                 break;
             case STAGGERED_GRID_LAYOUT:
                 StaggeredGridLayoutManager staggeredGridLayoutManager = ((StaggeredGridLayoutManager) layoutManager);
@@ -71,7 +74,7 @@ public abstract class RecyclerViewScrollListener extends OnScrollListener implem
         }
         Log.e("lastVisibleItemPosition","last:"+lastVisibleItemPosition);
     }
-
+    // 滑动状态改变的时候调用
     @Override
     public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
         super.onScrollStateChanged(recyclerView, newState);
@@ -82,15 +85,20 @@ public abstract class RecyclerViewScrollListener extends OnScrollListener implem
         int totalItemCount = layoutManager.getItemCount();
         Log.e("record","visibleItemCount:"+visibleItemCount+"totalItemCount:"+totalItemCount);
         if (visibleItemCount > 0 && currentScrollState == RecyclerView.SCROLL_STATE_IDLE && lastVisibleItemPosition == totalItemCount-1){
+            Log.e("ismIsLoadingMore",ismIsLoadingMore()+"");
             if (!ismIsLoadingMore()){
                 mIsLoadingMore = true;
                 onStart();
                 onLoadMore();
-
             }
         }
 
+
     }
+    // 判断是否到底的方法
+    // findLastVisibleItemPosition = getItemCount -1
+    // findFirstVisibleItemPosition + visibleItemCount(getChildCount) = totalItemCount
+    // recyclerView.canScrollVertically(1)
 
     public int findMax(int[] lastPosition) {
         int max = lastPosition[0];

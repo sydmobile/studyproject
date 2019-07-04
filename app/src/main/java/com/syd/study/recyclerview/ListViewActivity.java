@@ -39,7 +39,7 @@ public  class ListViewActivity extends BaseActivity {
 
     @BindView(R.id.lv)
     ListView lv;
-
+    // https://www.jianshu.com/p/4e8e4fd13cf7
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
