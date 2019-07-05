@@ -33,6 +33,7 @@
         <activity android:name=".testuses.TestActivity"/>
         <activity android:name=".ble.BLEActivity"/>
         <activity android:name=".recyclerview.RecyclerViewActivityOne"/>
+        <activity android:name=".recyclerview.brvahdemo.BaseUseActivity"/>
     </application>
 
 </manifest>

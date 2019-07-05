@@ -21,6 +21,7 @@ import com.syd.study.net.NetActivity;
 import com.syd.study.recyclerview.ListViewActivity;
 import com.syd.study.recyclerview.RecyclerViewActivity;
 import com.syd.study.recyclerview.RecyclerViewActivityOne;
+import com.syd.study.recyclerview.brvahdemo.BaseUseActivity;
 import com.syd.study.testuses.TestActivity;
 import com.syd.study.viewstub.ViewStubActivity;
 
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             // recyclerView
             case R.id.tv_rlv:
-                Intent intent1 = new Intent(this, RecyclerViewActivityOne.class);
+                Intent intent1 = new Intent(this, BaseUseActivity.class);
                 startActivity(intent1);
                 break;
             case R.id.tv_net:

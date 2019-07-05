@@ -268,6 +268,7 @@ public class RecyclerViewActivityOne extends BaseActivity {
             super(itemView);
             ButterKnife.bind(this, itemView);
             this.context = context;
+            // 设置监听不要在 onBindViewHolder 中执行
 //            itemView.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {

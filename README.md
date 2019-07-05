@@ -25,6 +25,37 @@ RecyclerView 比 ListView 更加高级具有灵活性。
 
 
 
+关于 position 
+
+1- position 在 onBindViewHolder 方法中的
+
+这个位置用来绑定数据
+比如：
+public void  onBindViewHolder(ViewHolder viewholder,int position){
+    holder.tvName.setText(strings.get(position));
+    
+}
+
+但是不能用于 
+public void onBindViewHolder(ViewHolder viewHolder,int position){
+    holder.tvName.setOnClickListener(new View.OnClickListener(){
+    
+        public void onClick(View view){
+            Log.e("==",position+"");
+        
+        }
+    });
+}
+这样当你插入或者删除数据调用  adapter.notifyIteminset() 的时候，是不会重新 onBindViewHolder 的，只会插入新的 View 的调用一次。
+这个时候。当你点击之前的 item 的时候，位置还是之前的 position 。就出现数据错乱了。
+
+至于 viewHolder.getAdapterPosition 和 viewHolder.getLayoutPosition 。他们在大多数情况下一样的。只是这里有个等待的问题。RecyclerView 是要等着
+adapter 里面的数据更改完，然后再体现在布局上面（<16ms）。所以这么短的时间我们一般感不到差别。
+AdapterPosition 是最先发生变化的。LayoutPosition 是我们看到的。
+
+建议用 getAdapterPosition 绑定数据。 getLayoutPosition 告诉用户按的是那个 item。
+
+
 
 
 
