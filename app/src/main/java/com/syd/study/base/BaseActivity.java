@@ -4,15 +4,16 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.ProgressBar;
 
 import com.syd.study.base.callback.PermissionListener;
 
 import java.lang.ref.WeakReference;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 /**
  * 说明：Activity 基础类
@@ -23,8 +24,9 @@ import java.lang.ref.WeakReference;
  * @version 1.0
  */
 @SuppressLint("Registered")
-public class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
+    public String TAG;
     /** 判断当前 Activity 是否在前台 */
     protected boolean isActive = false;
 
@@ -55,5 +57,22 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activity = this;
+        TAG = this.getClass().getSimpleName();
     }
+
+    public void init() {
+        initData();
+        initView();
+        initListener();
+        initNetData();
+    }
+
+    public abstract void initData();
+
+    public abstract void initView();
+
+    public abstract void initListener();
+
+    public abstract void initNetData();
+
 }

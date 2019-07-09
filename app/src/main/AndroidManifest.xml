@@ -34,6 +34,7 @@
         <activity android:name=".ble.BLEActivity"/>
         <activity android:name=".recyclerview.RecyclerViewActivityOne"/>
         <activity android:name=".recyclerview.brvahdemo.BaseUseActivity"/>
+        <activity android:name=".sensors.SensorsActivity"/>
     </application>
 
 </manifest>
