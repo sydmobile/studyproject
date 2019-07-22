@@ -1,9 +1,12 @@
 package com.syd.study.net;
 
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
+
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -56,13 +59,13 @@ public class NetActivity extends BaseActivity implements View.OnClickListener {
                         Log.e("onResponse", "5");
                         Log.e("onResponse", "6");
                         Log.e("onResponse", "7");
-                        log("onResponse","res");
+                        log("onResponse", "res");
 
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e("volley_error",error.getMessage()+"");
+                Log.e("volley_error", error.getMessage() + "");
             }
         });
     }
@@ -80,6 +83,9 @@ public class NetActivity extends BaseActivity implements View.OnClickListener {
         requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
         sendThread();
+        ImageView imageView;
+
+
     }
 
     private void initListener() {
@@ -118,23 +124,25 @@ public class NetActivity extends BaseActivity implements View.OnClickListener {
     public void log(String flag, String content) {
         for (int i = 0; i < 10; i++) {
 
-            Log.e(flag, content+i+(i+1));
+            Log.e(flag, content + i + (i + 1));
         }
     }
+
     int second = 5;
-    public void sendThread(){
+
+    public void sendThread() {
         second = 5;
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while (second != 0 ) {
+                while (second != 0) {
                     try {
                         Thread.sleep(1000);
                         second--;
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                               Log.e("runnable","=====");
+                                Log.e("runnable", "=====");
                             }
                         });
                     } catch (InterruptedException e) {

@@ -1,5 +1,7 @@
 package com.syd.study.ble;
 
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.le.BluetoothLeScanner;
 import android.os.Bundle;
 
 import com.syd.study.R;
@@ -20,6 +22,8 @@ public class BLEActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        BluetoothAdapter bluetoothAdapter;
+
 
     }
 }

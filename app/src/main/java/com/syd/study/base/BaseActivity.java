@@ -14,6 +14,9 @@ import com.syd.study.base.callback.PermissionListener;
 
 import java.lang.ref.WeakReference;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * 说明：Activity 基础类
  * <p>
@@ -50,10 +53,18 @@ public class BaseActivity extends AppCompatActivity {
     private ProgressDialog progressDialog = null;
 
     private PermissionListener mListener = null;
+    protected String TAG;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activity = this;
+        TAG = this.getClass().getSimpleName();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
     }
 }

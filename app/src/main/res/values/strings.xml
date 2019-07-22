@@ -27,4 +27,5 @@
     <string name="discovery">discovery</string>
     <string name="fw">sw</string>
     <string name="test_data">测试数据</string>
+    <string name="sensor">sensor</string>
 </resources>

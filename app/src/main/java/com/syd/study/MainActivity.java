@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -19,16 +21,16 @@ import com.android.volley.toolbox.Volley;
 import com.syd.study.lambda.LambdaActivity;
 import com.syd.study.net.NetActivity;
 import com.syd.study.recyclerview.ListViewActivity;
-import com.syd.study.recyclerview.RecyclerViewActivity;
 import com.syd.study.recyclerview.RecyclerViewActivityOne;
+import com.syd.study.sensor.SensorActivity;
 import com.syd.study.testuses.TestActivity;
+import com.syd.study.textview.TextViewActivity;
 import com.syd.study.viewstub.ViewStubActivity;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -47,7 +49,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView tvTest;
     @BindView(R.id.tv_net_test)
     TextView tvNetTest;
+    @BindView(R.id.tv_sensor)
+    TextView mTvSensor;
     private static final String TAG = "MainActivity";
+    @BindView(R.id.bt_textview)
+    Button mBtTextview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +74,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvList.setOnClickListener(this);
         tvTest.setOnClickListener(this);
         tvNetTest.setOnClickListener(this);
+        mTvSensor.setOnClickListener(this);
+        mBtTextview.setOnClickListener(this);
     }
 
     @Override
@@ -139,6 +147,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }));
                 break;
+
+            // sensor
+            case R.id.tv_sensor:
+                Intent intent6 = new Intent(this, SensorActivity.class);
+                startActivity(intent6);
+                break;
+
+            case R.id.bt_textview:
+                Intent intent7 = new Intent(this, TextViewActivity.class);
+                startActivity(intent7);
+                break;
+
         }
     }
+
+
 }

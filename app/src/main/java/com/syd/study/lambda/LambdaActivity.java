@@ -1,14 +1,12 @@
 package com.syd.study.lambda;
 
 import android.os.Bundle;
-import android.util.Log;
-
+                                                                                                                                                                                                           import android.os.Bundle;
+                                                                                                                                                                                                           import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
-
 import com.syd.study.R;
 import com.syd.study.base.BaseActivity;
 
