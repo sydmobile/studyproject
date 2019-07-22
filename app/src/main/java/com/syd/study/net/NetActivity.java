@@ -79,7 +79,7 @@ public class NetActivity extends BaseActivity implements View.OnClickListener {
         initListener();
     }
 
-    private void init() {
+    public  void init() {
         requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
         sendThread();
@@ -88,7 +88,7 @@ public class NetActivity extends BaseActivity implements View.OnClickListener {
 
     }
 
-    private void initListener() {
+    public  void initListener() {
         tvNet.setOnClickListener(this);
     }
 

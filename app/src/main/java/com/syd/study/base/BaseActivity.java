@@ -13,10 +13,6 @@ import android.widget.ProgressBar;
 import com.syd.study.base.callback.PermissionListener;
 
 import java.lang.ref.WeakReference;
-
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 /**
  * 说明：Activity 基础类
  * <p>
@@ -28,6 +24,7 @@ import butterknife.Unbinder;
 @SuppressLint("Registered")
 public class BaseActivity extends AppCompatActivity {
 
+    public String TAG;
     /** 判断当前 Activity 是否在前台 */
     protected boolean isActive = false;
 
@@ -53,7 +50,6 @@ public class BaseActivity extends AppCompatActivity {
     private ProgressDialog progressDialog = null;
 
     private PermissionListener mListener = null;
-    protected String TAG;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,9 +58,30 @@ public class BaseActivity extends AppCompatActivity {
         TAG = this.getClass().getSimpleName();
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    public void init(){
+        initData();
+        initView();
+        initListener();
+        initNetData();
+    }
+
+    public void initData(){
 
     }
+
+    public void initView(){
+
+    }
+
+    public void initListener(){
+
+    }
+
+    public void initNetData(){
+
+    }
+
+
+
+
 }

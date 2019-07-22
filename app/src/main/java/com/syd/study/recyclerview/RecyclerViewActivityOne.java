@@ -189,7 +189,7 @@ public class RecyclerViewActivityOne extends BaseActivity {
 
     }
 
-    private void initData() {
+    public void initData() {
         listData = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             listData.add("item" + i);
@@ -268,6 +268,7 @@ public class RecyclerViewActivityOne extends BaseActivity {
             super(itemView);
             ButterKnife.bind(this, itemView);
             this.context = context;
+            // 设置监听不要在 onBindViewHolder 中执行
 //            itemView.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {

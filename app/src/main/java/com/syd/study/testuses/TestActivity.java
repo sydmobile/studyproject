@@ -39,17 +39,9 @@ public class TestActivity extends BaseActivity {
         tvTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                byte b = 1;
-                long a = 1 << 7;
-                byte c = -128;
-                Log.e("===",a+"");
-                Log.e("===",(long)(b<<31)+"");
-                Log.e("===",(((long)b)<< 31)+"");
-                Log.e("===",((b)<< 30)+"");
-                Log.e("===",(int)c +"");
-                Log.e("===",(c & 0xFF )+"");
-
             }
         });
     }
+
+
 }

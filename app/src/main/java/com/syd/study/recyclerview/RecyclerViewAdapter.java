@@ -72,6 +72,7 @@ public abstract class RecyclerViewAdapter<T extends String> extends RecyclerView
         } else if (getItemViewType(position) == ItemType.TYPE_FOOTER) {
             FooterViewHolder footerViewHolder = (FooterViewHolder) holder;
             onBindFooterView(footerViewHolder.itemView);
+
         }
     }
 

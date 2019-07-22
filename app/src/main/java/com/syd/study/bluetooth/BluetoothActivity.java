@@ -42,7 +42,7 @@ public class BluetoothActivity extends BaseActivity implements View.OnClickListe
         init();
     }
 
-    private void init() {
+    public  void init() {
         // 初始化蓝牙
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if (bluetoothAdapter == null) {

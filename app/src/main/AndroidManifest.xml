@@ -15,9 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".firstcode.Main2Activity">
-
-        </activity>
+        <activity android:name=".firstcode.Main2Activity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,6 +33,8 @@
         <activity android:name=".testuses.TestActivity"/>
         <activity android:name=".ble.BLEActivity"/>
         <activity android:name=".recyclerview.RecyclerViewActivityOne"/>
+        <activity android:name=".recyclerview.brvahdemo.BaseUseActivity"/>
+        <activity android:name=".sensors.SensorsActivity"/>
         <activity android:name=".sensor.SensorActivity" />
         <activity android:name=".textview.TextViewActivity" />
     </application>

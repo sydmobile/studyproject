@@ -1,3 +1,114 @@
+
+
+      // 设置地图缩放范围
+        mMap.setZoomLevelRange(18, 23);
+        // 设置地图默认显示等级
+        mMap.setZoomLevel(mapModel.getInitLevel(), true);
+        // 设置地图显示
+        mMap.setFMViewMode(FMViewMode.FMVIEW_MODE_3D);
+        // 设置渲染模式，分为正常和线框模式
+        mMap.setRenderMode(FMRenderMode.RENDER_MODE_NORMAL);
+        mMap.setTiltAngle(50);
+        // 搜索分析
+        try {
+            searchAnalyser = FMSearchAnalyser.getFMSearchAnalyserById(mapModel.getFmapId());
+        } catch (FileNotFoundException | FMObjectException e) {
+            e.printStackTrace();
+        }
+        // 获取路径分析器
+        try {
+            mNaviAnalyser = FMNaviAnalyser.getFMNaviAnalyserById(mapModel.getFmapId());
+        } catch (FileNotFoundException | FMObjectException e) {
+            e.printStackTrace();
+        }
+        // 获取当前楼层数
+        groupSize = mMap.getFMMapInfo().getGroupSize();
+        // 获取当前楼层
+        focusGroupId = mMap.getFocusGroupId();
+        mStartGroupId = focusGroupId;
+        mEndGroupId = focusGroupId;
+        // 获取位置图层，整个场景只有一个定位图层。
+        fmLocationLayer = mMap.getFMLayerProxy().getFMLocationLayer();
+        mMap.addLayer(fmLocationLayer);
+        // 获取线图层，整个场景只有一个线图层。
+        fmLineLayer = mMap.getFMLayerProxy().getFMLineLayer();
+        mMap.addLayer(fmLineLayer);
+        // 初始化导航
+        initNavigation();
+        
+### 1. 简介
+ListView 恐怕是我们在 Android 开发中最常用到的控件了吧（以前的时候），现如今被 RecyclerView（API 22 加入）代替了。
+虽然现如今推出了 RecyclerView 来代替 ListView ，但是对 ListView 的掌握还是必不可少的！
+ListView 的表现形式就是一个列表。
+比如这种：
+![](F:\MyFile\myproject\MyGitHub\sydmobile.github.io\pic\201907\20190708ListView)
+就是这种可以上下滑动的列表。
+再来看看他的类的关系图
+![](F:\MyFile\myproject\MyGitHub\sydmobile.github.io\pic\201907\20190708ListView)
+可以用来展示多个信息条目
+
+### 工作原理 
+
+#### 本质原理
+
+- ListView 本身只是作为一个容器（列表），用来装载（显示数据），即列表中的一个个的 item。
+- 容器内的具体的数据（列表项 item）是来自适配器（Adapter）的
+
+
+
+
+
+```java
+    
+    public  class het{
+    
+            // 获取当前楼层
+            focusGroupId = mMap.getFocusGroupId();
+            mStartGroupId = focusGroupId;
+            mEndGroupId = focusGroupId;
+            // 获取位置图层，整个场景只有一个定位图层。
+            fmLocationLayer = mMap.getFMLayerProxy().getFMLocationLayer();
+            mMap.addLayer(fmLocationLayer);
+            // 获取线图层，整个场景只有一个线图层。
+            fmLineLayer = mMap.getFMLayerProxy().getFMLineLayer();
+            mMap.addLayer(fmLineLayer);
+            // 初始化导航
+            initNavigation();
+    
+    
+    
+    }
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### RecyclerView
 
 https://blog.csdn.net/xx326664162/article/details/61199895
@@ -23,6 +134,37 @@ RecyclerView 比 ListView 更加高级具有灵活性。
 
 3. 介绍一下分隔线 itemDecorView
 
+
+
+关于 position 
+
+1- position 在 onBindViewHolder 方法中的
+
+这个位置用来绑定数据
+比如：
+public void  onBindViewHolder(ViewHolder viewholder,int position){
+    holder.tvName.setText(strings.get(position));
+    
+}
+
+但是不能用于 
+public void onBindViewHolder(ViewHolder viewHolder,int position){
+    holder.tvName.setOnClickListener(new View.OnClickListener(){
+    
+        public void onClick(View view){
+            Log.e("==",position+"");
+        
+        }
+    });
+}
+这样当你插入或者删除数据调用  adapter.notifyIteminset() 的时候，是不会重新 onBindViewHolder 的，只会插入新的 View 的调用一次。
+这个时候。当你点击之前的 item 的时候，位置还是之前的 position 。就出现数据错乱了。
+
+至于 viewHolder.getAdapterPosition 和 viewHolder.getLayoutPosition 。他们在大多数情况下一样的。只是这里有个等待的问题。RecyclerView 是要等着
+adapter 里面的数据更改完，然后再体现在布局上面（<16ms）。所以这么短的时间我们一般感不到差别。
+AdapterPosition 是最先发生变化的。LayoutPosition 是我们看到的。
+
+建议用 getAdapterPosition 绑定数据。 getLayoutPosition 告诉用户按的是那个 item。
 
 
 
@@ -322,4 +464,3 @@ RecyclerView 比 ListView 更加高级具有灵活性。
  其实所有的绘制最终都是要落在 Canvas 对象上面的。Canvas 类拥有一套绘图方法供用户来使用，如：drawBitmap、drawRect、drawText 等等。其他的类也有 draw 方法，但最终都是需要有 Canvas。比如用户可能需要在 Canvas 上添加一些 Drawable 对象。Drawable 对象就有自己的 draw 方法，此时 Canvas 作为参数被传入
  
  
-  
