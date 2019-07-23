@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -31,6 +29,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -49,11 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView tvTest;
     @BindView(R.id.tv_net_test)
     TextView tvNetTest;
-    @BindView(R.id.tv_sensor)
-    TextView mTvSensor;
     private static final String TAG = "MainActivity";
-    @BindView(R.id.bt_textview)
-    Button mBtTextview;
+    @BindView(R.id.tv_okhttp)
+    TextView tvOkhttp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,8 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvList.setOnClickListener(this);
         tvTest.setOnClickListener(this);
         tvNetTest.setOnClickListener(this);
-        mTvSensor.setOnClickListener(this);
-        mBtTextview.setOnClickListener(this);
+        tvOkhttp.setOnClickListener(this);
     }
 
     @Override
@@ -157,6 +153,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bt_textview:
                 Intent intent7 = new Intent(this, TextViewActivity.class);
                 startActivity(intent7);
+                break;
+            case R.id.tv_okhttp:
+                Intent intent8 = new Intent("myAction");
+                intent8.addCategory(Intent.CATEGORY_DEFAULT);
+                startActivity(intent8);
                 break;
 
         }

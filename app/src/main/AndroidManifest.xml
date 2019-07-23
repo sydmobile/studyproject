@@ -37,6 +37,13 @@
         <activity android:name=".sensors.SensorsActivity"/>
         <activity android:name=".sensor.SensorActivity" />
         <activity android:name=".textview.TextViewActivity" />
+        <activity android:name=".okhttp.OkHttpBaseUseActivity">
+            <intent-filter>
+                <action android:name="myAction"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="test"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

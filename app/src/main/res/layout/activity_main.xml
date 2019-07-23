@@ -73,7 +73,16 @@
         android:layout_height="60dp"
         android:background="@drawable/button"
         android:gravity="center"
-        android:text="@string/sensor" />
+        android:text="sensor"/>
+
+    <TextView
+        android:id="@+id/tv_okhttp"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:text="ok_http" />
 
     <Button
         android:id="@+id/bt_lambda"
