@@ -20,5 +20,15 @@ public class AppConfig {
         public static String url_get = "https://easy-mock.com/mock/5ceca84112f1886d38826cd0/app/getmethod";
 
         public static String json_request = "http://39.106.24.148:8080/experiment/mock/locator/data/collection";
+
+        public static String post_request = "http://39.106.24.148:8080/nav/map/fmap";
+
+        public static String get_txt = "http://publicobject.com/helloworld.txt";
+        // 提取请求头、响应头
+        public static String header = "https://api.github.com/repos/square/okhttp/issues";
+        // text
+        public static String post_text = "https://api.github.com/markdown/raw";
+        // form
+        public static String post_form = "https://en.wikipedia.org/w/index.php";
     }
 }
