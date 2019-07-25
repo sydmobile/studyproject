@@ -498,7 +498,7 @@ public class OkHttpBaseUseActivity extends BaseActivity implements View.OnClickL
         RequestBody requestBody = new MultipartBody.Builder()
                 .addPart(Headers.of("Content-Dispositon","form-data;name=\"username\""),
                         RequestBody.create(null,"sun"))
-                .addPart(Headers.of("Content-Disposition","form-data;name=\"mFile\""),
+                .addPart(Headers.of("Content-Disposition","form-data;name=\"mFile\";filename=\"xxx.mp4\""),
                         RequestBody.create(mediaType_file,file))
                 .build();
         Request request = new Request.Builder()
