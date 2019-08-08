@@ -134,6 +134,7 @@ public class ListViewActivity extends BaseActivity {
 
         lv.setAdapter(new MyAdapter(this, list));
 
+
         // 页面可以看到几个 item ，第一次就执行 getView多少次。当再出现一个 item 的时候再调用一次 getView
         // contentView 的个数为页面可见的个数 +1 。然后不可见的 item 放入回收栈中，等待下一次回收使用。
 

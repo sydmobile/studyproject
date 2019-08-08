@@ -45,6 +45,8 @@
                 <category android:name="test"/>
             </intent-filter>
         </activity>
+        <activity android:name=".retrofit.Retrofit2BaseUseActivity"/>
+        <activity android:name=".file.FileActivity"/>
     </application>
 
 </manifest>

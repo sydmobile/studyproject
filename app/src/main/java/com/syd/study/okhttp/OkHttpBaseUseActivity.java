@@ -92,14 +92,11 @@ public class OkHttpBaseUseActivity extends BaseActivity implements View.OnClickL
                 goPost();
                 break;
             case R.id.get_txt:
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            OkHttpBaseUseActivity.this.run();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
+                new Thread(() -> {
+                    try {
+                        OkHttpBaseUseActivity.this.run();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }).start();
 
