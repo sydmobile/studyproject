@@ -1,146 +1,17 @@
+<!DOCTYPE html>
+
 <html>
 <head>
-    <style>
-        .city{
-        float:left;
-        margin:5px;
-        padding:15px;
-        width:400px;
-        height:300px;
-        border:1px solid black;
-        }
-    </style>
+
 </head>
 
 <body>
-<h1 style="text-align:center;color:red">The one World</h1>
-<h2 style="text-align:center">Resize this responsive page !</h2>
-
-<br/>
-<div class = "city">
-    <h2>London</h2>
-    <p>London is the capital city of England.</p>
-    <p>It is the most populous city in the United Kingdom,
-        with a metropolitan area of over 13 million inhabitants.</p>
-</div>
-
-<div class="city">
-    <h2>Paris</h2>
-    <p>Paris is the capital and most populous city of France.</p>
-</div>
-
-<div class="city">
-    <h2>Tokyo</h2>
-    <p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area,
-        and the most populous metropolitan area in the world.</p>
-</div>
-
-<button class="city" type="button" onclick = "alert('Hello World')">点击我</button>
-<br/>
-<br/>
-<form>
-    Fist name:<br/>
-    <input type="text" value="fist">
-    <br/>
-    Last name:<br/>
-    <input type="text" value="last">
-</form>
-
-<br/>
-<form>
-    Password:<input type="password">
-</form>
-<br/>
-<form action = "demo.php" target="_blank">
-    <input type="submit" value="提交d">
-</form>
-<br/>
-<form>
-    <input type="radio" name="sex" value="男生"> 男生<br/>
-    <input type="radio" name="sex" value="女生"> 女生<br/>
-    <input type="checkbox">自行车<br/>
-    <input type="checkbox"> 汽车
-
-</form>
-<br/>
-<input type="button" value="点击我呀" onclick="alert('Hello')">点击
-<br/>
-<form>
-    Quantity(between 1 and 5)
-    <input type="number" name="quantity" min="1" max="5">
-</form>
-
-<br/>
-<form>
-    <input type="number" min="0" max="100" step="10" value="30">
-</form>
-<br/>
-<form>
-    <input type="date" name="body">
-</form>
-<form>
-    <input type="color">
-</form>
-
-<br/>
-<form>
-    <input type="range" name="points" min="0" max="10">
-</form>
-<br/>
-<form>
-    <input type="month">
-</form>
-
-<br/>
-<form>
-    <input type="week" name="week_year">
-</form>
-<br/>
-<form>
-    <input type="time" name="usr_time">
-</form>
-<br/>
-<form>
-    <input type="datetime"/>
-</form>
-<br/>
-<form>
-    <input type="email">
-</form>
-<br/>
-<form>
-    Search Google:<input type="search" name="googlesearch">
-</form>
-<br/>
-<form>
-    <input type="tel" name="usertel">
-</form>
-<br/>
-<form action = "" autocomplete="on">
-    Fist name:<br/>
-    <input type="text" name="firstname" value="John" maxlength="2">
-    <br/>
-    <input type="text" name="lastname" value="HHH" autofocus>
-    <br/>
-    <input type="email" name="email" autocomplete="off">
-</form>
-
-<br/>
-<form action = "demo.asp" method="get">
-    Fist name :<input type="text" name = "fname">
-    <input type="submit" value="提交">
-    <input type="submit" value="已另一方式提交" formaction="ddd.js"/>
-</form>
-<br/>
-<form action = "demo.asp" method="post">
-    Fist name：<input type="text" name="fname"><br/>
-    <input type="text" name="fname"> <br/>
-    <input type="submit" formenctype="multipart/form-data" value="Submit as Multipart">
-</form>
-
+    <script>
+        'use strict';
+         var arr = [1,2,3,4,5,6];
+         var result = arr.map(arr);
+         console.log(result);
+    </script>
 
 </body>
-
-
-
 </html>

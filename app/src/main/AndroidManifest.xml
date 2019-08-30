@@ -47,6 +47,15 @@
         </activity>
         <activity android:name=".retrofit.Retrofit2BaseUseActivity"/>
         <activity android:name=".file.FileActivity"/>
+        <activity android:name=".practice.PracticeActivity"/>
+        <activity android:name=".recyclerview.PulmListViewActivity"/>
+        <activity android:name=".loadmore_refresh.RefreshActivity">
+            <intent-filter>
+                <action android:name="refresh"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".testuses.MainActivity"/>
     </application>
 
 </manifest>

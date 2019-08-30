@@ -1,12 +1,15 @@
 package com.syd.study;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,11 +21,12 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.syd.study.lambda.LambdaActivity;
 import com.syd.study.net.NetActivity;
-import com.syd.study.recyclerview.ListViewActivity;
+import com.syd.study.recyclerview.PulmListViewActivity;
 import com.syd.study.recyclerview.RecyclerViewActivityOne;
 import com.syd.study.sensor.SensorActivity;
 import com.syd.study.testuses.TestActivity;
 import com.syd.study.textview.TextViewActivity;
+import com.syd.study.util.L;
 import com.syd.study.viewstub.ViewStubActivity;
 
 import java.util.concurrent.ArrayBlockingQueue;
@@ -35,7 +39,6 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btLambda;
     @BindView(R.id.tv)
     TextView tv;
     @BindView(R.id.tv_rlv)
@@ -51,6 +54,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "MainActivity";
     @BindView(R.id.tv_okhttp)
     TextView tvOkhttp;
+    @BindView(R.id.tv_sensor)
+    TextView tvSensor;
+    @BindView(R.id.tv_refresh)
+    TextView tvRefresh;
+    @BindView(R.id.bt_lambda)
+    Button btLambda;
+    @BindView(R.id.bt_textview)
+    Button btTextview;
+    @BindView(R.id.tv_my_refresh)
+    TextView tvMyRefresh;
+    @BindView(R.id.ll)
+    LinearLayout ll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initView();
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     public void initView() {
         TextView textView = findViewById(R.id.tv);
         textView.setOnClickListener(this);
@@ -72,6 +88,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvTest.setOnClickListener(this);
         tvNetTest.setOnClickListener(this);
         tvOkhttp.setOnClickListener(this);
+        tvRefresh.setOnClickListener(this);
+        tvMyRefresh.setOnClickListener(this);
+        ll.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        L.e("ACTION_DOWN" + Math.random(), "" + event.getRawY());
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        L.e("ACTION_MOVE" + Math.random(), "" + event.getRawY());
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        L.e("ACTION_UP" + Math.random(), "" + event.getRawY());
+                        break;
+                    default:
+                        L.e("default" + Math.random(), "" + event.getRawY());
+                }
+                return false;
+            }
+        });
     }
 
     @Override
@@ -114,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             // ListView
             case R.id.tv_list:
-                Intent intent3 = new Intent(this, ListViewActivity.class);
+                Intent intent3 = new Intent(this, PulmListViewActivity.class);
                 startActivity(intent3);
                 break;
             case R.id.bt_lambda:
@@ -159,7 +196,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent8.addCategory(Intent.CATEGORY_DEFAULT);
                 startActivity(intent8);
                 break;
+            case R.id.tv_refresh:
+//                Intent intent9 = new Intent("refresh");
+//                startActivity(intent9);
 
+                Intent intent10 = new Intent(this, com.syd.study.testuses.MainActivity.class);
+                startActivity(intent10);
+                break;
+            case R.id.tv_my_refresh:
+                Intent intent9 = new Intent("refresh");
+                startActivity(intent9);
+                break;
         }
     }
 

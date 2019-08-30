@@ -67,6 +67,7 @@ public class BaseActivity extends AppCompatActivity {
 
     public void initData(){
 
+
     }
 
     public void initView(){

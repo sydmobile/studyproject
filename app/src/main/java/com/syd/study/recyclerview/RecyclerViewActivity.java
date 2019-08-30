@@ -78,5 +78,6 @@ public class RecyclerViewActivity extends BaseActivity {
 //        rlv.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.HORIZONTAL));
 
         rlv.setItemAnimator(new DefaultItemAnimator());
+
     }
 }

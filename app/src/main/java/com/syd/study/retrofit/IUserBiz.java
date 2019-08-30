@@ -15,8 +15,8 @@ import retrofit2.http.GET;
  */
 public interface IUserBiz {
 
-    @GET("users")
-    Call<List<User>> getUsers();
+//    @GET("users")
+//    Call<List<User>> getUsers();
 
 
 }

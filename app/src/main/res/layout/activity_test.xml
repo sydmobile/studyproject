@@ -22,4 +22,10 @@
         android:text="@string/test"
         android:textColor="#FFFFFF"
         android:gravity="center" />
+    <com.syd.study.recyclerview.CustomTextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/textSize_title"
+        android:text="@string/app_name"
+        android:textColor="@color/colorPrimary"/>
 </LinearLayout>

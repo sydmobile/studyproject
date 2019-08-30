@@ -13,7 +13,6 @@ import java.util.List;
 
 import androidx.annotation.Nullable;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -58,7 +57,7 @@ public class Retrofit2BaseUseActivity extends BaseActivity implements View.OnCli
 
     }
 //
-//    public void baseUse(){
+    public void baseUse(){
 //        Retrofit retrofit = new Retrofit.Builder()
 //                .baseUrl(AppConfig.URL.url_get)
 //                .addConverterFactory(GsonConverterFactory.create())
@@ -76,6 +75,6 @@ public class Retrofit2BaseUseActivity extends BaseActivity implements View.OnCli
 //
 //            }
 //        });
-//
-//    }
+
+    }
 }

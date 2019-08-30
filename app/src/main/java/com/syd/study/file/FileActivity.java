@@ -1,19 +1,19 @@
 package com.syd.study.file;
 
-import android.content.Context;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.os.Environment;
 
 import com.syd.study.R;
 import com.syd.study.base.BaseActivity;
+import com.syd.study.util.L;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.Reader;
-
 import androidx.annotation.Nullable;
+
 
 /**
  * 说明：进行读写操作的
@@ -25,6 +25,7 @@ import androidx.annotation.Nullable;
  */
 public class FileActivity extends BaseActivity {
 
+    private static final String TAG = "FileActivity";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +34,7 @@ public class FileActivity extends BaseActivity {
 
     public void raw(){
         InputStream is = getResources().openRawResource(R.raw.shinei);
-
+        Canvas canvas;
     }
 
     public void asset(){
@@ -57,6 +58,8 @@ public class FileActivity extends BaseActivity {
         // 1.申请权限
         // 2.检查内存状态
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())){
+            L.e(TAG,"已装载内存卡");
+        }else {
 
         }
     }
