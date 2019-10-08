@@ -24,16 +24,13 @@ public class MainActivity extends Activity {
 		listView = (ListView) findViewById(R.id.list_view);
 		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
 		listView.setAdapter(adapter);
-		refreshableView.setOnRefreshListener(new RefreshableView.PullToRefreshListener() {
-			@Override
-			public void onRefresh() {
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				refreshableView.finishRefreshing();
+		refreshableView.setOnRefreshListener(() -> {
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
+			refreshableView.finishRefreshing();
 		}, 0);
 	}
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<com.syd.study.testuses.MyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <EditText
         android:id="@+id/et_test_data"
@@ -11,21 +11,30 @@
         android:layout_height="wrap_content"
         android:hint="@string/test_data"
         android:importantForAutofill="no"
-        tools:targetApi="o"
-        android:inputType="text"/>
+        android:inputType="text"
+        tools:targetApi="o" />
+
     <TextView
-        style="@style/Widget.AppCompat.Button"
         android:id="@+id/tv_test"
-        android:background="@drawable/button"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:background="@drawable/button"
+        android:gravity="center"
         android:text="@string/test"
-        android:textColor="#FFFFFF"
-        android:gravity="center" />
+        android:textColor="#FFFFFF" />
+
     <com.syd.study.recyclerview.CustomTextView
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:textSize="@dimen/textSize_title"
+        android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:textColor="@color/colorPrimary"/>
-</LinearLayout>
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/textSize_title" />
+
+    <com.syd.study.testuses.MyLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    </com.syd.study.testuses.MyLinearLayout>
+
+</com.syd.study.testuses.MyLinearLayout>

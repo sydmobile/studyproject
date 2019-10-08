@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -20,13 +19,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.syd.study.lambda.LambdaActivity;
+import com.syd.study.mvp_test.UserLoginActivity;
 import com.syd.study.net.NetActivity;
 import com.syd.study.recyclerview.PulmListViewActivity;
 import com.syd.study.recyclerview.RecyclerViewActivityOne;
 import com.syd.study.sensor.SensorActivity;
 import com.syd.study.testuses.TestActivity;
 import com.syd.study.textview.TextViewActivity;
-import com.syd.study.util.L;
 import com.syd.study.viewstub.ViewStubActivity;
 
 import java.util.concurrent.ArrayBlockingQueue;
@@ -66,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView tvMyRefresh;
     @BindView(R.id.ll)
     LinearLayout ll;
+    @BindView(R.id.tv_mvp)
+    TextView tvMvp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,25 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvOkhttp.setOnClickListener(this);
         tvRefresh.setOnClickListener(this);
         tvMyRefresh.setOnClickListener(this);
-        ll.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        L.e("ACTION_DOWN" + Math.random(), "" + event.getRawY());
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-                        L.e("ACTION_MOVE" + Math.random(), "" + event.getRawY());
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        L.e("ACTION_UP" + Math.random(), "" + event.getRawY());
-                        break;
-                    default:
-                        L.e("default" + Math.random(), "" + event.getRawY());
-                }
-                return false;
-            }
-        });
+        tvMvp.setOnClickListener(this);
     }
 
     @Override
@@ -132,10 +115,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 ThreadPoolExecutor threadPoolExecutor =
                         new ThreadPoolExecutor
-                                (5, 10, 5000, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<Runnable>(2));
+                                (5, 10, 5000, TimeUnit.MILLISECONDS,
+                                        new ArrayBlockingQueue<Runnable>(2));
                 // corePoolSize 线程池中核心线程的数量
                 // maximumPoolSize 线程中最大线程数量
-                // keepAliveTime 非核心线程闲置时间 ThreadPoolExecutor 的 allowCoreThreadTimeOut 属性设置为 true 则该参数也表示
+                // keepAliveTime 非核心线程闲置时间 ThreadPoolExecutor 的 allowCoreThreadTimeOut 属性设置为 true
+                // 则该参数也表示
                 // 核心线程的超时时长
                 // Unit 第三个的单位
                 // workQueue
@@ -168,12 +153,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String url = "http://192.168.1.100:8080/nav/hospitals";
                 Log.e("start", System.currentTimeMillis() + "");
                 RequestQueue requestQueue = Volley.newRequestQueue(this);
-                requestQueue.add(new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.e("onResponse", System.currentTimeMillis() + response);
-                    }
-                }, new Response.ErrorListener() {
+                requestQueue.add(new StringRequest(Request.Method.POST, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                Log.e("onResponse", System.currentTimeMillis() + response);
+                            }
+                        }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Log.e("onResponse", "error");
@@ -207,6 +193,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent9 = new Intent("refresh");
                 startActivity(intent9);
                 break;
+            case R.id.tv_mvp:
+                Intent intent11 = new Intent(this, UserLoginActivity.class);
+                startActivity(intent11);
+                break;
+
         }
     }
 

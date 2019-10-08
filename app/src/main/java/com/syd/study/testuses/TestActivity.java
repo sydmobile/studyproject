@@ -35,6 +35,18 @@ public class TestActivity extends BaseActivity {
         init();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e(TAG,"onStart()");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e(TAG,"onResume()");
+    }
+
     public void init(){
         tvTest.setOnClickListener(new View.OnClickListener() {
             @Override

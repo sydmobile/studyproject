@@ -60,4 +60,14 @@ public class RefreshActivity extends BaseActivity {
 //        },0);
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
 }
