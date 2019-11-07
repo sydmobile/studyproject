@@ -1,5 +1,7 @@
 package com.syd.study.mvp_test.view;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,8 +15,6 @@ import com.syd.study.mvp_test.presenter.CidianPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
 
 import androidx.annotation.Nullable;
 import butterknife.BindView;
@@ -82,11 +82,10 @@ public class MVCActivity extends BaseActivity implements IfanyiView, View.OnClic
                     cidianPresenter.inputToModel(etUsername.getText().toString(),MVCActivity.this);
                     List list = new ArrayList();
                 }
-                Observer observer;
-                Observable observable;
                 break;
         }
     }
+
 }
 
 

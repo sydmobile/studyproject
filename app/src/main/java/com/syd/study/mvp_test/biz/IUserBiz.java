@@ -10,5 +10,5 @@ package com.syd.study.mvp_test.biz;
  */
 public interface IUserBiz {
 
-    public void login(String username,String password,OnLoginListener loginListener);
+    void login(String username, String password, OnLoginListener loginListener);
 }

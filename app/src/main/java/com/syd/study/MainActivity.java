@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -18,9 +19,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.syd.study.eventbus.FistEventBusActivity;
 import com.syd.study.lambda.LambdaActivity;
 import com.syd.study.mvp_test.UserLoginActivity;
 import com.syd.study.net.NetActivity;
+import com.syd.study.observer.DesignModeActivity;
 import com.syd.study.recyclerview.PulmListViewActivity;
 import com.syd.study.recyclerview.RecyclerViewActivityOne;
 import com.syd.study.sensor.SensorActivity;
@@ -67,6 +70,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     LinearLayout ll;
     @BindView(R.id.tv_mvp)
     TextView tvMvp;
+    @BindView(R.id.tv_design)
+    TextView tvDesign;
+    @BindView(R.id.tv_eventbus)
+    TextView tvEventbus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +99,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvRefresh.setOnClickListener(this);
         tvMyRefresh.setOnClickListener(this);
         tvMvp.setOnClickListener(this);
+        tvDesign.setOnClickListener(this);
+        tvEventbus.setOnClickListener(this);
+        Toolbar toolbar = findViewById(R.id.tb);
+        setActionBar(toolbar);
     }
 
     @Override
@@ -196,6 +207,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tv_mvp:
                 Intent intent11 = new Intent(this, UserLoginActivity.class);
                 startActivity(intent11);
+                break;
+            case R.id.tv_design:
+                Intent intent12 = new Intent(this, DesignModeActivity.class);
+                startActivity(intent12);
+                break;
+            case R.id.tv_eventbus:
+                Intent intent13 = new Intent(this, FistEventBusActivity.class);
+                startActivity(intent13);
                 break;
 
         }

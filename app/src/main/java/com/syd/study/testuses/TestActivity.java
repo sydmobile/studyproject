@@ -9,7 +9,10 @@ import android.widget.TextView;
 import com.syd.study.R;
 import com.syd.study.base.BaseActivity;
 
+import java.util.Observable;
+
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -26,13 +29,15 @@ public class TestActivity extends BaseActivity {
     EditText etTestData;
     @BindView(R.id.tv_test)
     TextView tvTest;
-
+    private static final String TAG = "TestActivity";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_IMMERSIVE);
         ButterKnife.bind(this);
         init();
+        Log.e(TAG,"onCreate");
     }
 
     @Override
@@ -48,11 +53,7 @@ public class TestActivity extends BaseActivity {
     }
 
     public void init(){
-        tvTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
+
     }
 
 

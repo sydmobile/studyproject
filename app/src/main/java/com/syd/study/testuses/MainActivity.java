@@ -20,8 +20,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main1);
-		refreshableView = (RefreshableView) findViewById(R.id.refreshable_view);
-		listView = (ListView) findViewById(R.id.list_view);
+		refreshableView = findViewById(R.id.refreshable_view);
+		listView = findViewById(R.id.list_view);
 		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
 		listView.setAdapter(adapter);
 		refreshableView.setOnRefreshListener(() -> {

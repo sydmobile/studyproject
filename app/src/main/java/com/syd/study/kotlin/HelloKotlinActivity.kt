@@ -15,7 +15,7 @@ class HelloKotlinActivity {
         var uppercase = languageNmae.toUpperCase(Locale.CHINA)
         var languageRange: String? = null
 
-        var count = 30;
+        var count = 30
         if (count==42){
             println("Hello Kotlin!")
         }else{

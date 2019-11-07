@@ -21,13 +21,9 @@
     <!--获取配对列表-->
     <string name="bond_devices">bonded_devices</string>
     <!--启用可检测-->
-    <string name="request_discovery">request_discovery</string>
     <!--开启发现蓝牙设备-->
-    <string name="www">d</string>
     <string name="discovery">discovery</string>
-    <string name="fw">sw</string>
     <string name="test_data">测试数据</string>
-    <string name="sensor">sensor</string>
 
     <string name="pull_to_refresh">下拉可以刷新</string>
     <string name="release_to_refresh">释放立即刷新</string>

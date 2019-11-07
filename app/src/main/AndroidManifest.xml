@@ -58,6 +58,9 @@
         <activity android:name=".testuses.MainActivity"/>
         <activity android:name=".mvp_test.UserLoginActivity" />
         <activity android:name=".mvp_test.view.MVCActivity" />
+        <activity android:name=".observer.DesignModeActivity" />
+        <activity android:name=".eventbus.FistEventBusActivity" />
+        <activity android:name=".eventbus.SecondEventBusActivity" />
     </application>
 
 </manifest>

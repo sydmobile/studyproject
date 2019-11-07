@@ -6,9 +6,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColorPrimary">@color/colorWhite</item>
-        <item name="actionOverflowMenuStyle">@style/OptionMenu</item>
     </style>
+
+    <style name="sencond" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
 
     <style name="ButtonTheme_Common" parent="@style/Widget.AppCompat.Button">
         <item name="android:background">@drawable/button</item>

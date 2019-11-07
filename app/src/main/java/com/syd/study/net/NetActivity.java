@@ -86,6 +86,7 @@ public class NetActivity extends BaseActivity implements View.OnClickListener {
         ImageView imageView;
 
 
+
     }
 
     public  void initListener() {

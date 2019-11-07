@@ -52,13 +52,25 @@ public class CustomTextView extends TextView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        Log.e(TAG,"onMeasure");
+        Log.e(TAG,"onMeasure"+getHeight()+getMeasuredHeight());
+
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        Log.e(TAG,"onSizeChanged"+h+"oldh:"+oldh+getHeight());
     }
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        super.onLayout(changed, left, top, right, bottom);
-        Log.e(TAG,"onLayout");
+        super.onLayout(true, 30, 60, 40, 80);
+        Log.e(TAG,"onLayout"+getHeight());
+    }
+
+    @Override
+    public void layout(int l, int t, int r, int b) {
+        super.layout(l, t, r, b);
     }
 
     @Override
