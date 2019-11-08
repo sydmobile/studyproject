@@ -8,6 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="my_material" parent="android:Theme.Material">
+
+    </style>
+
     <style name="sencond" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:background">@color/colorPrimary</item>
     </style>

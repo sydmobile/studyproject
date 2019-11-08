@@ -20,8 +20,31 @@
             />
     </com.google.android.material.appbar.AppBarLayout>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/sym_action_email"
+        android:scaleType="fitXY"
+        app:fabSize="auto"
+        android:elevation="20dp"
+        app:borderWidth="2dp"
+        app:rippleColor="@color/colorPrimary"
+        android:layout_margin="10dp"
+
+
+        />
+    <androidx.cardview.widget.CardView
+        android:elevation="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sfsfs"/>
+    </androidx.cardview.widget.CardView>
 
     <ScrollView
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -165,6 +188,14 @@
                 android:background="@drawable/button"
                 android:gravity="center"
                 android:text="eventbus" />
+            <TextView
+                android:id="@+id/tv_material_design"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/button"
+                android:gravity="center"
+                android:text="tv_material_design" />
 
         </LinearLayout>
     </ScrollView>

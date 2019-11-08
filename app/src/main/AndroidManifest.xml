@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.syd.study">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.syd.study">
 
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name=".StudyApplication"
         android:allowBackup="false"
@@ -27,40 +28,47 @@
         <activity android:name=".Home" />
         <activity android:name=".viewstub.ViewStubActivity" />
         <activity android:name=".lambda.LambdaActivity" />
-        <activity android:name=".recyclerview.RecyclerViewActivity"/>
-        <activity android:name=".net.NetActivity"/>
-        <activity android:name=".recyclerview.ListViewActivity"/>
-        <activity android:name=".bluetooth.BluetoothActivity"/>
-        <activity android:name=".testuses.TestActivity"/>
-        <activity android:name=".ble.BLEActivity"/>
-        <activity android:name=".recyclerview.RecyclerViewActivityOne"/>
-        <activity android:name=".recyclerview.brvahdemo.BaseUseActivity"/>
-        <activity android:name=".sensors.SensorsActivity"/>
+        <activity android:name=".recyclerview.RecyclerViewActivity" />
+        <activity android:name=".net.NetActivity" />
+        <activity android:name=".recyclerview.ListViewActivity" />
+        <activity android:name=".bluetooth.BluetoothActivity" />
+        <activity android:name=".testuses.TestActivity" />
+        <activity android:name=".ble.BLEActivity" />
+        <activity android:name=".recyclerview.RecyclerViewActivityOne" />
+        <activity android:name=".recyclerview.brvahdemo.BaseUseActivity" />
+        <activity android:name=".sensors.SensorsActivity" />
         <activity android:name=".sensor.SensorActivity" />
         <activity android:name=".textview.TextViewActivity" />
         <activity android:name=".okhttp.OkHttpBaseUseActivity">
             <intent-filter>
-                <action android:name="myAction"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="test"/>
+                <action android:name="myAction" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="test" />
             </intent-filter>
         </activity>
-        <activity android:name=".retrofit.Retrofit2BaseUseActivity"/>
-        <activity android:name=".file.FileActivity"/>
-        <activity android:name=".practice.PracticeActivity"/>
-        <activity android:name=".recyclerview.PulmListViewActivity"/>
+        <activity android:name=".retrofit.Retrofit2BaseUseActivity" />
+        <activity android:name=".file.FileActivity" />
+        <activity android:name=".practice.PracticeActivity" />
+        <activity android:name=".recyclerview.PulmListViewActivity" />
         <activity android:name=".loadmore_refresh.RefreshActivity">
             <intent-filter>
-                <action android:name="refresh"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="refresh" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".testuses.MainActivity"/>
+        <activity android:name=".testuses.MainActivity" />
         <activity android:name=".mvp_test.UserLoginActivity" />
         <activity android:name=".mvp_test.view.MVCActivity" />
         <activity android:name=".observer.DesignModeActivity" />
         <activity android:name=".eventbus.FistEventBusActivity" />
         <activity android:name=".eventbus.SecondEventBusActivity" />
+        <activity
+            android:name=".material.MaterialActivity"
+           />
+        <activity
+            android:name=".material.MaterialCompatActivity"
+            android:theme="@android:style/Theme.Material.Wallpaper" />
     </application>
 
 </manifest>

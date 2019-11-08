@@ -21,6 +21,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.syd.study.eventbus.FistEventBusActivity;
 import com.syd.study.lambda.LambdaActivity;
+import com.syd.study.material.MaterialActivity;
 import com.syd.study.mvp_test.UserLoginActivity;
 import com.syd.study.net.NetActivity;
 import com.syd.study.observer.DesignModeActivity;
@@ -74,6 +75,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView tvDesign;
     @BindView(R.id.tv_eventbus)
     TextView tvEventbus;
+    @BindView(R.id.tb)
+    Toolbar tb;
+    @BindView(R.id.tv_material_design)
+    TextView tvMaterialDesign;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvEventbus.setOnClickListener(this);
         Toolbar toolbar = findViewById(R.id.tb);
         setActionBar(toolbar);
+        tvMaterialDesign.setOnClickListener(this);
     }
 
     @Override
@@ -215,6 +221,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tv_eventbus:
                 Intent intent13 = new Intent(this, FistEventBusActivity.class);
                 startActivity(intent13);
+                break;
+            case R.id.tv_material_design:
+                Intent intent14 = new Intent(this, MaterialActivity.class);
+                startActivity(intent14);
+                startActivity(intent14);
                 break;
 
         }
