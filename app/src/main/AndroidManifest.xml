@@ -63,12 +63,27 @@
         <activity android:name=".observer.DesignModeActivity" />
         <activity android:name=".eventbus.FistEventBusActivity" />
         <activity android:name=".eventbus.SecondEventBusActivity" />
-        <activity
-            android:name=".material.MaterialActivity"
-           />
+        <activity android:name=".material.MaterialActivity" />
         <activity
             android:name=".material.MaterialCompatActivity"
             android:theme="@android:style/Theme.Material.Wallpaper" />
+        <activity android:name=".mvc.SimpleActivity" />
+        <activity android:name=".mvc.WeatherActivity" />
+        <activity android:name=".mvp.view.FanYiActivity" />
+        <activity android:name=".mvcmvpmvvm.LoginActivity" />
+        <activity android:name=".mvcmvpmvvm.mvc.LoginMVCActivity" />
+        <activity android:name=".mvcmvpmvvm.mvp.LoginMVPActivity" />
+        <activity android:name=".rx.RxJavaTest" />
+        <activity android:name=".video.VideoTest" />
+        <activity android:name=".urlscheme.UrlSchemeActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="urlscheme"
+                    android:host="auth_activity"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

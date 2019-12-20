@@ -47,7 +47,6 @@ public class OkHttpClientManager {
 
     // ClientManager 的私有构造方法
     private OkHttpClientManager() {
-
         mOkHttpClient = new OkHttpClient();
         mDelivery = new Handler(Looper.getMainLooper());
         mGson = new Gson();
@@ -126,14 +125,14 @@ public class OkHttpClientManager {
         return getInstance()._postSynString(url, params);
     }
 
-    public static void postAsyn(String url, ResultCallback callback,Param...params) {
-        getInstance()._postAsyn(url,callback,params);
+    public static void postAsyn(String url, ResultCallback callback, Param... params) {
+        getInstance()._postAsyn(url, callback, params);
     }
 
-    public static void postAsyn(String url,final ResultCallback callback,Map<String,String> map){
+    public static void postAsyn(String url, final ResultCallback callback,
+                                Map<String, String> map) {
         getInstance()._postAsyn(url, callback, map);
     }
-
 
 
     /**
@@ -249,13 +248,15 @@ public class OkHttpClientManager {
 
     private Response _post(String url, File file, String fileKey) throws IOException {
 
-        Request request = buildMultipartFormRequest(url, new File[]{file}, new String[]{fileKey}, null);
+        Request request = buildMultipartFormRequest(url, new File[]{file}, new String[]{fileKey},
+                null);
         return mOkHttpClient.newCall(request).execute();
     }
 
     private Response _post(String url, File file, String fileKey, Param... params) throws IOException {
 
-        Request request = buildMultipartFormRequest(url, new File[]{file}, new String[]{fileKey}, params);
+        Request request = buildMultipartFormRequest(url, new File[]{file}, new String[]{fileKey},
+                params);
         return mOkHttpClient.newCall(request).execute();
 
     }
@@ -263,28 +264,34 @@ public class OkHttpClientManager {
     /**
      * 基于异步的 post 上传文件
      */
-    private void _postAsyn(String url, ResultCallback callback, File[] files, String[] fileKeys, Param... params) throws IOException {
+    private void _postAsyn(String url, ResultCallback callback, File[] files, String[] fileKeys,
+                           Param... params) throws IOException {
         Request request = buildMultipartFormRequest(url, files, fileKeys, params);
         deliveryResult(callback, request);
     }
 
     private void _postAsyn(String url, ResultCallback callback, File file, String fileKeys) {
-        Request request = buildMultipartFormRequest(url, new File[]{file}, new String[]{fileKeys}, null);
+        Request request = buildMultipartFormRequest(url, new File[]{file}, new String[]{fileKeys}
+                , null);
         deliveryResult(callback, request);
     }
 
-    private void _postAsyn(String url, ResultCallback callback, File file, String fileKey, Param... params) {
-        Request request = buildMultipartFormRequest(url, new File[]{file}, new String[]{fileKey}, params);
+    private void _postAsyn(String url, ResultCallback callback, File file, String fileKey,
+                           Param... params) {
+        Request request = buildMultipartFormRequest(url, new File[]{file}, new String[]{fileKey},
+                params);
         deliveryResult(callback, request);
     }
 
     /**
      * 异步下载文件
-     * @param url url
+     *
+     * @param url        url
      * @param destFilDir 本地文件储存的文件夹
-     * @param callback callback
+     * @param callback   callback
      */
-    private void _downloadAsyn(final String url, final String destFilDir, final ResultCallback callback) {
+    private void _downloadAsyn(final String url, final String destFilDir,
+                               final ResultCallback callback) {
         final Request request = new Request.Builder()
                 .url(url)
                 .build();
@@ -337,7 +344,7 @@ public class OkHttpClientManager {
     }
 
 
-    private void setErrorResId(final ImageView view ,final int errorResId){
+    private void setErrorResId(final ImageView view, final int errorResId) {
         mDelivery.post(new Runnable() {
             @Override
             public void run() {
@@ -352,12 +359,14 @@ public class OkHttpClientManager {
     }
 
 
-    private Request buildMultipartFormRequest(String url, File[] files, String[] fileKeys, Param[] params) {
+    private Request buildMultipartFormRequest(String url, File[] files, String[] fileKeys,
+                                              Param[] params) {
         params = validateParam(params);
         MultipartBody.Builder builder = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM);
         for (Param param : params) {
-            builder.addPart(Headers.of("Content-Disposition", "form-data;name=\"" + param.key + "\""),
+            builder.addPart(Headers.of("Content-Disposition", "form-data;name=\"" + param.key +
+                            "\""),
                     RequestBody.create(null, param.value));
         }
 
@@ -367,7 +376,8 @@ public class OkHttpClientManager {
                 File file = files[i];
                 String fileName = file.getName();
                 fileBody = RequestBody.create(MediaType.parse(guessMimeType(fileName)), file);
-                builder.addPart(Headers.of("Content-Disposition", "form-data;name=\"" + fileKeys[i] + "\";filename" +
+                builder.addPart(Headers.of("Content-Disposition",
+                        "form-data;name=\"" + fileKeys[i] + "\";filename" +
                                 "=\"" + fileName + "\""),
                         fileBody);
 
@@ -449,7 +459,8 @@ public class OkHttpClientManager {
         });
     }
 
-    private void sendFailedStringCallback(final Request request, final Exception e, final ResultCallback callback) {
+    private void sendFailedStringCallback(final Request request, final Exception e,
+                                          final ResultCallback callback) {
         mDelivery.post(new Runnable() {
             @Override
             public void run() {

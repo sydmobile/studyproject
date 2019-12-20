@@ -41,6 +41,11 @@
             android:baselineAligned="false" />
 
     </LinearLayout>
+    <TextView
+        android:hint="登录状态"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_status"/>
 
     <Button
         android:id="@+id/bt_login"

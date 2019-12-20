@@ -27,9 +27,11 @@ import com.syd.study.net.NetActivity;
 import com.syd.study.observer.DesignModeActivity;
 import com.syd.study.recyclerview.PulmListViewActivity;
 import com.syd.study.recyclerview.RecyclerViewActivityOne;
+import com.syd.study.rx.RxJavaTest;
 import com.syd.study.sensor.SensorActivity;
 import com.syd.study.testuses.TestActivity;
 import com.syd.study.textview.TextViewActivity;
+import com.syd.study.video.VideoTest;
 import com.syd.study.viewstub.ViewStubActivity;
 
 import java.util.concurrent.ArrayBlockingQueue;
@@ -79,6 +81,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Toolbar tb;
     @BindView(R.id.tv_material_design)
     TextView tvMaterialDesign;
+    @BindView(R.id.tv_rxjava)
+    TextView tvRxjava;
+    @BindView(R.id.tv_video)
+    TextView tvVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +115,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = findViewById(R.id.tb);
         setActionBar(toolbar);
         tvMaterialDesign.setOnClickListener(this);
+        tvRxjava.setOnClickListener(this);
+        tvVideo.setOnClickListener(this);
     }
 
     @Override
@@ -225,8 +233,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tv_material_design:
                 Intent intent14 = new Intent(this, MaterialActivity.class);
                 startActivity(intent14);
-                startActivity(intent14);
                 break;
+            case R.id.tv_rxjava:
+                Intent intent15 = new Intent(this, RxJavaTest.class);
+                startActivity(intent15);
+                break;
+            case R.id.tv_video:
+                Intent intent16 = new Intent(this, VideoTest.class);
+                startActivity(intent16);
 
         }
     }

@@ -197,6 +197,32 @@
                 android:gravity="center"
                 android:text="tv_material_design" />
 
+            <TextView
+                android:id="@+id/tv_rxjava"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/button"
+                android:gravity="center"
+                android:text="RxJava" />
+
+            <TextView
+                android:id="@+id/tv_video"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/button"
+                android:gravity="center"
+                android:text="Video" />
+            <TextView
+                android:id="@+id/tv_urlscheme"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/button"
+                android:gravity="center"
+                android:text="url_scheme" />
+
         </LinearLayout>
     </ScrollView>
 

@@ -59,207 +59,17 @@ ListView 的表现形式就是一个列表。
 - 容器内的具体的数据（列表项 item）是来自适配器（Adapter）的
 
 
-#### 常见的数据库： 
-
-MySQL：开源免费适用于中小型企业的数据库，sun 公司收购了MySQL 后来 Oracle 收购了 SUN，Oracle 收购后开始收费了。    
-
-mariadb：由 mysql 创始人搞出来的，直接是 MySQL 的开源版本的一个分支，基本上所有的命令都一样。
-
-Oracle：甲骨文公司。适用于大型电商网站。
-
-db2:IBM公司 解决方案：软件和硬件。服务器架构，银行系统大多采用 db2
-
-sqlserver:windows里面  政府网站  
-
-sybase:被淘汰了   
-
-NOSQL 非关系型数据库 key:value  
-mongodb   
-redis    
-
-#### 关系型数据库：
-
-主要用来描述实体和实体之间的关系。  
-
-E-R图（Entity Relationship Diagram）    
-提供了表示实体类型、属性和联系的方法，用来描述现实世界的概念模型。
-
-实体：方框   
-属性：椭圆   
-关系：菱形
-
-![ER关系图]()   
-
-#### MYSQL 数据库服务器  
-
-MYSQL数据库：数据库管理软件  
-
-服务器：一台电脑，安装了相关的服务器软件，这些软件监听不同的端口，不同的端口号提供了不同的服务    
-
-#### MYSQL 安装和卸载   
-
-卸载：   
-- 打开控制面板，删除软件 mysql server  
-- 删除 mysql 安装目录中的所有文件  
-- 删除mysql 数据存放文件：C:\ProgramData\MySQL 
-
-
-安装：
-
-- 运行安装程序：在启动配置教程之前，一路下一步，没有下一步的话直接 finish  
-- 第一次 finish 之后启动服务器配置教程   
-- 第一个 incluce mysql bin directory to windows path  
-- 第二个：端口号不要去该，字符集选择 utf-8  
-
-#### MYSQL 的 SQL 语句
-
-SQL：Structure Query Language 结构化查询语言   
-DDL：数据定义语言：定义数据库、数据表它们的结构：create（创建）、drop（删除）alter（修改）  
-DML：数据操纵语言：主要是用来操作数据 insert（插入） update（修改） delete（删除） 
-DCL：数据控制语言：定义访问权限，取消访问权限，安全蛇蛇 grant   
-DQL：数据查询语言：select（查询） from子句 where 子句  
-
-#### 数据的 CRUD 的操作  
-
-登录数据库服务器 mysql -uroot -proot 回车  
-
-创建数据库  
-
-```aidl
-    create database 数据库名字; 
-    
-    create database day06; 回车  
-    
-    创建数据的时候，指定字符集 
-    create database 数据库名字 character set utf-8; 回车 
-    
-    创建数据的时候，指定字符集和校对 
-    
-    create database day06_1 character set utf-8 collate 校对规则;
-    
-```  
-
-查看数据库 
-
-```java
-    查看所有数据库
-    
-    show databases; 
-    
-    查看数据库定义的语句
-    show create database 数据库名字；
-
-    informartion_schema 
-    performance_schema
-    mysql  
-    上面这三个库不要动
-
-``` 
-
-修改数据库的操作
-
-```html
-
-    ---修改数据库
-    alter database 数据库名字 character set 字符集;
-``` 
-
-删除数据库  
-
-```roomsql
-    drop database 数据库名字;
-    
-```  
-
-其他数据库操作命令 
-```html
-    ---切换数据库（选中数据库）
-    use 数据库名字
-    use day06;
-    
-    ---查看一下当前正在使用的数据库
-    select database();
-```
-
-创建表
-```html
-    create table 表名(
-        列名 列的类型 约束，
-        列明2 列的类型  约束
-    )；
-    
-    列的类型：
-    java   sql 
-    int    int
-    char/string   char/varchar
-                    char:固定长度   char(3)  哈    内部存储 哈空格空格
-                    varchar:可变长度  varchar(3) 哈   内部储存  哈   所以 varchar 更节省空间
-                    长度代表的是字符的个数
-    double    double
-    float     float 
-    boolean   boolean  
-    date      date  ：YYYY-MM-DD
-              time ：hh:mm:ss   
-              dateTime : YYYY-MM-DD hh:mm:ss  默认是 null
-              tiemstamp:  YYYY-MM-DD hh:mm:ss 默认使用当前时间     
-              
-              text：主要用来存放文本
-              blob：存放的是二进制
-              
-    列的约束
-        主键约束：primary key
-        唯一约束：unique
-        非空约束：not null          
-```
-
-创建学生表 
-1. 分析实体：学生 
-2. 学生ID
-3. 姓名
-4. 性别
-5. 年龄
-```html
-    create table student(
-        sid int primary key,sname varchar(31),sex int,age int
-    );
-
-``` 
-
-查看表 
-```html
-
---- 查看所有表
-
-show tables；
-
----- 查看表的创建过程 
-show create table student;
-
----- 查看表的结构
-
-desc student；
-
-```  
-
-修改表  
-添加列（add）修改列（modify）删除列（drop） 修改表名（rename） 修改表的字符集 
-```html
-添加列（add）
-alter table 表名 add 列名 列类型 列的约束 
-
-alter table student add grade int not null;
-
-```
-
-exit 推出 
-
-；语句命令结束  
+ 
 
 
 
 
 
 
+
+
+         
+            
 ```java
     
     public  class het{
@@ -282,33 +92,6 @@ exit 推出
     }
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ### RecyclerView
@@ -612,6 +395,9 @@ AdapterPosition 是最先发生变化的。LayoutPosition 是我们看到的。
  
  #### 3 代码中创建
  
+ 
+  
+   
  ```java
     // 这里是绘制的 ShapeDrawable，当然还有很多比如：BitmapDrawable、InsetDrawable、NinePatchDrawable 等等
     public class CustomDrawable extends View{
@@ -665,4 +451,13 @@ AdapterPosition 是最先发生变化的。LayoutPosition 是我们看到的。
  
  其实所有的绘制最终都是要落在 Canvas 对象上面的。Canvas 类拥有一套绘图方法供用户来使用，如：drawBitmap、drawRect、drawText 等等。其他的类也有 draw 方法，但最终都是需要有 Canvas。比如用户可能需要在 Canvas 上添加一些 Drawable 对象。Drawable 对象就有自己的 draw 方法，此时 Canvas 作为参数被传入
  
+ **辅导费**   
  
+#### 辅导辅导
+ ```java
+ fdfd
+ ```  
+ - fdsf
+ - fd
+
+  
