@@ -17,12 +17,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".firstcode.Main2Activity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="urlscheme"
+                    android:host="auth_activity"/>
             </intent-filter>
         </activity>
         <activity android:name=".Home" />
@@ -76,14 +82,10 @@
         <activity android:name=".rx.RxJavaTest" />
         <activity android:name=".video.VideoTest" />
         <activity android:name=".urlscheme.UrlSchemeActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="urlscheme"
-                    android:host="auth_activity"/>
-            </intent-filter>
+
         </activity>
+        <activity android:name=".okhttp.OkHttpTest" />
+        <activity android:name=".net.urlconnection.UrlConnectionActivity" />
     </application>
 
 </manifest>

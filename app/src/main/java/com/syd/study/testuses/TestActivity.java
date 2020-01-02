@@ -9,10 +9,7 @@ import android.widget.TextView;
 import com.syd.study.R;
 import com.syd.study.base.BaseActivity;
 
-import java.util.Observable;
-
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -30,29 +27,41 @@ public class TestActivity extends BaseActivity {
     @BindView(R.id.tv_test)
     TextView tvTest;
     private static final String TAG = "TestActivity";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_IMMERSIVE);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE);
         ButterKnife.bind(this);
         init();
-        Log.e(TAG,"onCreate");
+        Log.e(TAG, "onCreate");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.e(TAG,"onStart()");
+        Log.e(TAG, "onStart()");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.e(TAG,"onResume()");
+        Log.e(TAG, "onResume()");
+        int num = getInt();
+        Log.e("num",num+"");
     }
 
-    public void init(){
+    public int getInt() {
+        try {
+            Log.e("getInt()", "1");
+            return 1;
+        } finally {
+            Log.e("finally", "==");
+        }
+    }
+
+    public void init() {
 
     }
 

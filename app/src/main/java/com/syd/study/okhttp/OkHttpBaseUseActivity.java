@@ -187,6 +187,7 @@ public class OkHttpBaseUseActivity extends BaseActivity implements View.OnClickL
 
             try {
                 Response response = okHttpClient.newCall(request).execute();
+
                 if (response.isSuccessful()) {
                     L.e(response.body().string());
                 }

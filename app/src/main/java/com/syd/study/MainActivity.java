@@ -2,6 +2,7 @@ package com.syd.study;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -31,6 +32,7 @@ import com.syd.study.rx.RxJavaTest;
 import com.syd.study.sensor.SensorActivity;
 import com.syd.study.testuses.TestActivity;
 import com.syd.study.textview.TextViewActivity;
+import com.syd.study.urlscheme.UrlSchemeActivity;
 import com.syd.study.video.VideoTest;
 import com.syd.study.viewstub.ViewStubActivity;
 
@@ -85,6 +87,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView tvRxjava;
     @BindView(R.id.tv_video)
     TextView tvVideo;
+    @BindView(R.id.tv_urlscheme)
+    TextView tvUrlscheme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvMaterialDesign.setOnClickListener(this);
         tvRxjava.setOnClickListener(this);
         tvVideo.setOnClickListener(this);
+        tvUrlscheme.setOnClickListener(this);
     }
 
     @Override
@@ -241,6 +246,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tv_video:
                 Intent intent16 = new Intent(this, VideoTest.class);
                 startActivity(intent16);
+                break;
+            case R.id.tv_urlscheme:
+                Uri data = Uri.parse("urlscheme://auth_activity");
+                Intent intent17 = new Intent(Intent.ACTION_VIEW,data);
+                intent17.setData(data);
+                startActivity(intent17);
+                break;
 
         }
     }
