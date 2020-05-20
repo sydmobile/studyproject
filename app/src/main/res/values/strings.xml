@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PersonalStudy</string>
+    <string name="app_name">TEST</string>
     <string-array name="rlv_data">
         <item>Android</item>
         <item>Java</item>
@@ -32,4 +32,15 @@
     <string name="updated_at">上次更新于%1$s前</string>
     <string name="updated_just_now">刚刚更新</string>
     <string name="time_error">时间有问题</string>
+    <string name="get">get请求</string>
+    <string name="getasyn">get异步请求</string>
+    <string name="post">post请求</string>
+    <string name="postasyn">post异步请求</string>
+    <string name="json_request">json请求</string>
+    <string name="upload_file">上传文件</string>
+    <string name="rx_get">rx_get请求</string>
+    <string name="rx_post">rx_post 请求</string>
+    <string name="app_interceptor">APP-Interceptor</string>
+    <string name="net_interceptor">NET-Interceptor</string>
+    <string name="remind_receive">接受内容</string>
 </resources>

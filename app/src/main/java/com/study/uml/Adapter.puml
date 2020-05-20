@@ -1,0 +1,26 @@
+@startuml
+
+
+abstract class BaseAdapter
+class MenuAdapter
+class ArrayAdapter
+class SimpleAdapter
+abstract class CursorAdapter
+interface Adapter
+interface SpinnerAdapter
+interface ListAdapter
+
+
+
+
+Adapter <|-- ListAdapter
+Adapter <|-- SpinnerAdapter
+ListAdapter <|-- BaseAdapter
+SpinnerAdapter <|-- BaseAdapter
+BaseAdapter <|-- MenuAdapter
+BaseAdapter <|-- ArrayAdapter
+BaseAdapter <|-- SimpleAdapter
+BaseAdapter <|-- CursorAdapter
+
+
+@enduml

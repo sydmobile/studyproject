@@ -5,7 +5,7 @@
               android:layout_height="match_parent">
 
 
-    <com.syd.study.loadmore_refresh.MyCustomRefreshView
+    <com.study.study_module.loadmore_refresh.MyCustomRefreshView
         android:id="@+id/refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -16,7 +16,7 @@
             android:layout_height="match_parent">
 
         </ListView>
-    </com.syd.study.loadmore_refresh.MyCustomRefreshView>
+    </com.study.study_module.loadmore_refresh.MyCustomRefreshView>
 
 
 </LinearLayout>

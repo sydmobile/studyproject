@@ -1,31 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
     <Button
         android:id="@+id/bt_get"
         style="@style/ButtonTheme_Common"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="get请求"/>
+        android:text="@string/get" />
+
+    <Button
+        android:id="@+id/bt_get_asyn"
+        style="@style/ButtonTheme_Common"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/getasyn" />
+
     <Button
         android:id="@+id/bt_post"
         style="@style/ButtonTheme_Common"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="post请求"/>
+        android:text="@string/post" />
+
+    <Button
+        android:id="@+id/bt_post_asyn"
+        style="@style/ButtonTheme_Common"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/postasyn" />
+
     <Button
         android:id="@+id/bt_json"
         style="@style/ButtonTheme_Common"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="json请求"/>
+        android:text="@string/json_request" />
+
     <Button
-        android:id="@+id/get_txt"
+        android:id="@+id/bt_upload"
         style="@style/ButtonTheme_Common"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="get请求-文档"/>
+        android:text="@string/upload_file" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bt_app_interceptor"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_interceptor" />
+
+        <Button
+            android:id="@+id/bt_net_interceptor"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/net_interceptor" />
+    </LinearLayout>
+
 
 </LinearLayout>

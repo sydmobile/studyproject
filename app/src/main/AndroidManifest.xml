@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.syd.study">
+    package="com.study">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
     <application
         android:name=".StudyApplication"
         android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/air"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/air"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
@@ -31,21 +34,17 @@
                     android:host="auth_activity"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Home" />
-        <activity android:name=".viewstub.ViewStubActivity" />
-        <activity android:name=".lambda.LambdaActivity" />
-        <activity android:name=".recyclerview.RecyclerViewActivity" />
-        <activity android:name=".net.NetActivity" />
-        <activity android:name=".recyclerview.ListViewActivity" />
-        <activity android:name=".bluetooth.BluetoothActivity" />
-        <activity android:name=".testuses.TestActivity" />
-        <activity android:name=".ble.BLEActivity" />
-        <activity android:name=".recyclerview.RecyclerViewActivityOne" />
-        <activity android:name=".recyclerview.brvahdemo.BaseUseActivity" />
-        <activity android:name=".sensors.SensorsActivity" />
-        <activity android:name=".sensor.SensorActivity" />
-        <activity android:name=".textview.TextViewActivity" />
-        <activity android:name=".okhttp.OkHttpBaseUseActivity">
+        <activity android:name=".study_module.viewstub.ViewStubActivity" />
+        <activity android:name=".study_module.lambda.LambdaActivity" />
+        <activity android:name=".study_module.recyclerview.RecyclerViewActivity" />
+        <activity android:name=".study_module.recyclerview.ListViewActivity" />
+        <activity android:name=".testuses.TestActivity"/>
+        <activity android:name=".study_module.recyclerview.RecyclerViewActivityOne" />
+        <activity android:name=".study_module.recyclerview.brvahdemo.BaseUseActivity" />
+        <activity android:name=".study_module.sensors.SensorsActivity" />
+        <activity android:name=".study_module.sensor.SensorActivity" />
+        <activity android:name=".study_module.textview.TextViewActivity" />
+        <activity android:name=".study_module.okhttp.OkHttpBaseUseActivity">
             <intent-filter>
                 <action android:name="myAction" />
 
@@ -53,39 +52,45 @@
                 <category android:name="test" />
             </intent-filter>
         </activity>
-        <activity android:name=".retrofit.Retrofit2BaseUseActivity" />
+        <activity android:name=".study_module.retrofit.Retrofit2BaseUseActivity" />
         <activity android:name=".file.FileActivity" />
         <activity android:name=".practice.PracticeActivity" />
-        <activity android:name=".recyclerview.PulmListViewActivity" />
-        <activity android:name=".loadmore_refresh.RefreshActivity">
+        <activity android:name=".study_module.recyclerview.PulmListViewActivity" />
+        <activity android:name=".study_module.loadmore_refresh.RefreshActivity">
             <intent-filter>
                 <action android:name="refresh" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".testuses.MainActivity" />
-        <activity android:name=".mvp_test.UserLoginActivity" />
-        <activity android:name=".mvp_test.view.MVCActivity" />
-        <activity android:name=".observer.DesignModeActivity" />
-        <activity android:name=".eventbus.FistEventBusActivity" />
-        <activity android:name=".eventbus.SecondEventBusActivity" />
-        <activity android:name=".material.MaterialActivity" />
+        <activity android:name=".study_module.mvp_test.UserLoginActivity" />
+        <activity android:name=".study_module.mvp_test.view.MVCActivity" />
+        <activity android:name=".study_module.observer.DesignModeActivity" />
+        <activity android:name=".study_module.eventbus.FistEventBusActivity" />
+        <activity android:name=".study_module.eventbus.SecondEventBusActivity" />
+        <activity android:name=".study_module.material.MaterialActivity" />
         <activity
-            android:name=".material.MaterialCompatActivity"
+            android:name=".study_module.material.MaterialCompatActivity"
             android:theme="@android:style/Theme.Material.Wallpaper" />
-        <activity android:name=".mvc.SimpleActivity" />
-        <activity android:name=".mvc.WeatherActivity" />
-        <activity android:name=".mvp.view.FanYiActivity" />
-        <activity android:name=".mvcmvpmvvm.LoginActivity" />
-        <activity android:name=".mvcmvpmvvm.mvc.LoginMVCActivity" />
-        <activity android:name=".mvcmvpmvvm.mvp.LoginMVPActivity" />
-        <activity android:name=".rx.RxJavaTest" />
-        <activity android:name=".video.VideoTest" />
-        <activity android:name=".urlscheme.UrlSchemeActivity">
+        <activity android:name=".study_module.mvc.SimpleActivity" />
+        <activity android:name=".study_module.mvc.WeatherActivity" />
+        <activity android:name=".study_module.mvp.view.FanYiActivity" />
+        <activity android:name=".study_module.mvcmvpmvvm.LoginActivity" />
+        <activity android:name=".study_module.mvcmvpmvvm.mvc.LoginMVCActivity" />
+        <activity android:name=".study_module.mvcmvpmvvm.mvp.LoginMVPActivity" />
+        <activity android:name=".study_module.rx.RxJavaTest" />
+        <activity android:name=".study_module.video.VideoTest" />
+        <activity android:name=".study_module.urlscheme.UrlSchemeActivity">
 
         </activity>
-        <activity android:name=".okhttp.OkHttpTest" />
-        <activity android:name=".net.urlconnection.UrlConnectionActivity" />
+        <activity android:name=".study_module.okhttp.OkHttpTest" />
+        <activity android:name=".study_module.net.urlconnection.UrlConnectionActivity" />
+        <activity android:name=".study_module.mvp.google.taskdetail.TaskDetailActivity" />
+        <activity android:name=".study_module.mvp.my_mvp.module_demo.TestActivity" />
+        <activity android:name=".study_module.rx.retrofit_rxjava.WanAndroidActivity" />
+        <activity android:name=".study_module.rx.RxActivity" />
+        <activity android:name=".study_module.rx.RxJavaTest1" />
+        <activity android:name=".utils.updateapk.AndroidOPermissionActivity" />
     </application>
 
 </manifest>

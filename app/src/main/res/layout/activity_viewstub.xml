@@ -9,12 +9,12 @@
         android:textColor="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="内容区域"/>
+        android:text="出现 ViewStud"/>
 
     <ViewStub
         android:id="@+id/vs"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout="@layout/activity_main"/>
+        android:layout="@layout/activity_common"/>
 
 </LinearLayout>

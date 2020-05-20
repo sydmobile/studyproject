@@ -7,7 +7,7 @@
         android:id="@+id/bt_print"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="打印字符"/>
+        android:text="log"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

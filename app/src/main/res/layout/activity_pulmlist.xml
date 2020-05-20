@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:id="@+id/tv_create_menu"/>
-    <com.syd.study.recyclerview.PulmListView
+    <com.study.study_module.recyclerview.PulmListView
         android:background="@color/colorPrimary"
         android:id="@+id/lv"
         android:drawSelectorOnTop="true"
@@ -15,5 +15,5 @@
         android:dividerHeight="1dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </com.syd.study.recyclerview.PulmListView>
+    </com.study.study_module.recyclerview.PulmListView>
 </LinearLayout>
