@@ -1,5 +1,8 @@
 package com.study.testuses;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapShader;
@@ -9,7 +12,6 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.Display;
 import android.widget.EditText;
@@ -52,13 +54,13 @@ public class TestActivity extends BaseActivity {
     ImageView ivShow;
     String[] commands = new String[]{"test", "save1", "save2", "save3", "show", "image",
             "getHeight",
-            "volley", "dialog","download"};
+            "volley", "dialog", "download", "copy"};
     DownAPKUtils downAPKUtils;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        downAPKUtils = new DownAPKUtils(this,"app.apk");
+        downAPKUtils = new DownAPKUtils(this, "app.apk");
 
 
     }
@@ -118,7 +120,13 @@ public class TestActivity extends BaseActivity {
                 case "download":
                     Uri r = Uri.parse("package:" + getPackageName());
                     Uri uri = Uri.fromFile(getExternalCacheDir());
-                    downAPKUtils.downloadApk("","下载APK","正在更新");
+                    downAPKUtils.downloadApk("", "下载APK", "正在更新");
+                    break;
+                case "copy":
+                    ClipboardManager clipboardManager =
+                            (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                    clipboardManager.setPrimaryClip(ClipData.newPlainText("label", "复制的内容"));
+                    break;
 
 
             }

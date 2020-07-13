@@ -64,6 +64,7 @@ public class AppUtils {
 
     /**
      * 安装 apk
+     * @deprecated  Android 7.0 后不允许直接使用 File 的 uri
      * @param context 上下文
      * @param path 文件路径
      */

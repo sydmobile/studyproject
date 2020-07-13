@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:theme="@style/ToolBarTheme"
+            android:id="@+id/toolbar"
+            app:title="标题"
+            app:logo="@mipmap/ic_launcher"
+            app:subtitle="sub"
+            app:subtitleTextColor="@color/colorWhite"
+            app:navigationIcon="@mipmap/baseline_list_white_36"
+            app:navigationContentDescription="导航"
+            app:titleTextColor="@color/colorWhite"
+            android:background="@color/colorAccent"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/rlv" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/colorPrimaryDark"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/colorPrimaryDark"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="80dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

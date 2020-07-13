@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="Test">
-        <attr name="hello" format="color">
+    <declare-styleable name="TestTextView">
+        <attr name="hello" format="string">
+
+        </attr>
+
+        <attr name="test" format="reference">
 
         </attr>
     </declare-styleable>

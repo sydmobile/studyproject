@@ -1,22 +1,22 @@
 package com.study;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.study.base.BaseActivity;
 import com.study.model.Command;
 import com.study.study_module.eventbus.FistEventBusActivity;
+import com.study.study_module.fragment.FragmentMainActivity;
 import com.study.study_module.lambda.LambdaActivity;
 import com.study.study_module.material.MaterialActivity;
+import com.study.study_module.material.MaterialCompatActivity;
+import com.study.study_module.material.MaterialDesignActivity;
 import com.study.study_module.mvp_test.UserLoginActivity;
 import com.study.study_module.observer.DesignModeActivity;
 import com.study.study_module.okhttp.OkHttpBaseUseActivity;
@@ -24,7 +24,6 @@ import com.study.study_module.recyclerview.PulmListViewActivity;
 import com.study.study_module.recyclerview.RecyclerViewActivityOne;
 import com.study.study_module.retrofit.Retrofit2BaseUseActivity;
 import com.study.study_module.rx.RxJavaTest;
-import com.study.study_module.rx.RxJavaTest1;
 import com.study.study_module.sensor.SensorActivity;
 import com.study.study_module.textview.TextViewActivity;
 import com.study.study_module.video.VideoTest;
@@ -35,6 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
@@ -44,6 +44,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @BindView(R.id.rlv)
     RecyclerView rlv;
     List<Command> listCommand = new ArrayList<>();
+    @BindView(R.id.tb)
+    Toolbar tb;
+    @BindView(R.id.ll)
+    LinearLayout ll;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,18 +82,22 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         addCommand(Command.getInstance("设计模式", DesignModeActivity.class));
         addCommand(Command.getInstance("EventBus", FistEventBusActivity.class));
         addCommand(Command.getInstance("TextView高级", TextViewActivity.class));
-        addCommand(Command.getInstance("Material", MaterialActivity.class));
+        addCommand(Command.getInstance("Material", MaterialDesignActivity.class));
         addCommand(Command.getInstance("Video", VideoTest.class));
         addCommand(Command.getInstance("Retrofit使用", Retrofit2BaseUseActivity.class));
         addCommand(Command.getInstance("RxJava", RxJavaTest.class));
         addCommand(Command.getInstance("okhttp", OkHttpBaseUseActivity.class));
+        addCommand(Command.getInstance("Material控件", MaterialCompatActivity.class));
+        addCommand(Command.getInstance("Fragment", FragmentMainActivity.class));
         rlv.setLayoutManager(new GridLayoutManager(this, 4));
         rlv.setAdapter(new Adapter(this));
+        tb.inflateMenu(R.menu.menu);
     }
 
     public void addCommand(Command command) {
         listCommand.add(command);
     }
+
 //
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
@@ -103,6 +112,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 //        return true;
 //    }
 
+    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

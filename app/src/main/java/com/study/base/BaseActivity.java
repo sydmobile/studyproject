@@ -37,7 +37,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract int layoutId();
 
     public void init() {
-        L.e("init");
         initData();
         initView();
         initListener();
@@ -45,15 +44,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public void initData() {
-        L.e("initData");
+
     }
 
     public void initView() {
-        L.e("iniView");
+
     }
 
     public void initListener() {
-        L.e("initListener");
+
     }
 
     public void initNetData() {

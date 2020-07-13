@@ -13,9 +13,20 @@ public class AppConfig {
     public static class URL {
 
         // get 请求 无参数
-        public static String url_get = "https://wanandroid.com/wxarticle/chapters/json";
+        public static final String url_get = "https://wanandroid.com/wxarticle/chapters/json";
         // post 请求  参数 ：k：关键字  例如  k：android
-        public static String url_post = "https://www.wanandroid.com/article/query/0/json";
+        public static final String url_post = "https://www.wanandroid.com/article/query/0/json";
+
+        // 微信公众号历史文章  408 为公众号id  1 为页码
+        public static final String wxarticle_list = "https://wanandroid.com/wxarticle/list/408/{page}/json";
+
+        // 图片
+        public static final String imgs = "https://gank.io/api/v2/data/category/Girl/type/Girl/page/1" +
+                "/count/10";
+
+        // 网易新闻  参数：0-10  10-10  20-10 30-10 .....
+        public static String news = "http://c.m.163.com/nc/article/headline/T1348647853363/0-10" +
+                ".html";
 
 
         public static String json_request = "http://39.106.24.148:8080/experiment/mock/locator" +

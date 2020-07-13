@@ -70,8 +70,7 @@
         <activity android:name=".study_module.eventbus.SecondEventBusActivity" />
         <activity android:name=".study_module.material.MaterialActivity" />
         <activity
-            android:name=".study_module.material.MaterialCompatActivity"
-            android:theme="@android:style/Theme.Material.Wallpaper" />
+            android:name=".study_module.material.MaterialCompatActivity"/>
         <activity android:name=".study_module.mvc.SimpleActivity" />
         <activity android:name=".study_module.mvc.WeatherActivity" />
         <activity android:name=".study_module.mvp.view.FanYiActivity" />
@@ -91,6 +90,8 @@
         <activity android:name=".study_module.rx.RxActivity" />
         <activity android:name=".study_module.rx.RxJavaTest1" />
         <activity android:name=".utils.updateapk.AndroidOPermissionActivity" />
+        <activity android:name=".study_module.material.MaterialDesignActivity" />
+        <activity android:name=".study_module.fragment.FragmentMainActivity" />
     </application>
 
 </manifest>
