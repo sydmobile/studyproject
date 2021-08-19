@@ -4,6 +4,8 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 
+import com.study.R;
+
 /**
  * 说明：$
  * <p>

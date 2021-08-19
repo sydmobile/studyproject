@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.study.base.BaseActivity;
 import com.study.model.Command;
+import com.study.study_module.dialog.DialogTestActivity;
 import com.study.study_module.eventbus.FistEventBusActivity;
 import com.study.study_module.fragment.FragmentMainActivity;
 import com.study.study_module.lambda.LambdaActivity;
@@ -89,6 +90,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         addCommand(Command.getInstance("okhttp", OkHttpBaseUseActivity.class));
         addCommand(Command.getInstance("Material控件", MaterialCompatActivity.class));
         addCommand(Command.getInstance("Fragment", FragmentMainActivity.class));
+        addCommand(Command.getInstance("Dialog", DialogTestActivity.class));
         rlv.setLayoutManager(new GridLayoutManager(this, 4));
         rlv.setAdapter(new Adapter(this));
         tb.inflateMenu(R.menu.menu);

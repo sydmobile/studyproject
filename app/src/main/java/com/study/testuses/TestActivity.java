@@ -30,6 +30,9 @@ import com.study.utils.volley.HttpRequest;
 import com.study.utils.volley.Parameter;
 import com.study.utils.volley.ResponseListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import androidx.annotation.Nullable;
 import butterknife.BindView;
 
@@ -42,19 +45,19 @@ import butterknife.BindView;
  * @version 1.0
  */
 public class TestActivity extends BaseActivity {
-    @BindView(R.id.gv)
-    GridView gv;
-    @BindView(R.id.et_params)
-    EditText etParams;
-    @BindView(R.id.tv_show)
-    TextView tvShow;
-    @BindView(R.id.iv_source)
-    ImageView ivSource;
-    @BindView(R.id.iv_show)
-    ImageView ivShow;
-    String[] commands = new String[]{"test", "save1", "save2", "save3", "show", "image",
-            "getHeight",
-            "volley", "dialog", "download", "copy"};
+//    @BindView(R.id.gv)
+//    GridView gv;
+//    @BindView(R.id.et_params)
+//    EditText etParams;
+//    @BindView(R.id.tv_show)
+//    TextView tvShow;
+//    @BindView(R.id.iv_source)
+//    ImageView ivSource;
+//    @BindView(R.id.iv_show)
+//    ImageView ivShow;
+//    String[] commands = new String[]{"test", "save1", "save2", "save3", "show", "image",
+//            "getHeight",
+//            "volley", "dialog", "download", "copy"};
     DownAPKUtils downAPKUtils;
 
     @Override
@@ -86,51 +89,51 @@ public class TestActivity extends BaseActivity {
     @Override
     public void initView() {
         super.initView();
-        gv.setAdapter(new TestAdapter(this, commands));
-        gv.setOnItemClickListener((parent, view, position, id) -> {
-            switch (commands[position]) {
-                case "test":
-                    // 临时测试使用
-                    test();
-                    break;
-                case "save1":
-                    // 保存字符串
-                    save1();
-                    break;
-                case "save2":
-                    // 保存int
-                    save2();
-                    break;
-                case "show":
-                    // 显示保存内容
-                    show();
-                    break;
-                case "image":
-                    // 展示裁剪处理过的图片
-                    showNewImage();
-                    break;
-                case "getHeight":
-                    // 屏幕信息工具类实验
-                    screen();
-                    break;
-                case "volley":
-                    // volley 工具类实验
-                    volley();
-                    break;
-                case "download":
-                    Uri r = Uri.parse("package:" + getPackageName());
-                    Uri uri = Uri.fromFile(getExternalCacheDir());
-                    downAPKUtils.downloadApk("", "下载APK", "正在更新");
-                    break;
-                case "copy":
-                    ClipboardManager clipboardManager =
-                            (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                    clipboardManager.setPrimaryClip(ClipData.newPlainText("label", "复制的内容"));
-                    break;
-
-
-            }
-        });
+//        gv.setAdapter(new TestAdapter(this, commands));
+//        gv.setOnItemClickListener((parent, view, position, id) -> {
+//            switch (commands[position]) {
+//                case "test":
+//                    // 临时测试使用
+//                    test();
+//                    break;
+//                case "save1":
+//                    // 保存字符串
+//                    save1();
+//                    break;
+//                case "save2":
+//                    // 保存int
+//                    save2();
+//                    break;
+//                case "show":
+//                    // 显示保存内容
+//                    show();
+//                    break;
+//                case "image":
+//                    // 展示裁剪处理过的图片
+//                    showNewImage();
+//                    break;
+//                case "getHeight":
+//                    // 屏幕信息工具类实验
+//                    screen();
+//                    break;
+//                case "volley":
+//                    // volley 工具类实验
+//                    volley();
+//                    break;
+//                case "download":
+//                    Uri r = Uri.parse("package:" + getPackageName());
+//                    Uri uri = Uri.fromFile(getExternalCacheDir());
+//                    downAPKUtils.downloadApk("", "下载APK", "正在更新");
+//                    break;
+//                case "copy":
+//                    ClipboardManager clipboardManager =
+//                            (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+//                    clipboardManager.setPrimaryClip(ClipData.newPlainText("label", "复制的内容"));
+//                    break;
+//
+//
+//            }
+//        });
     }
 
     private void test() {
@@ -147,19 +150,19 @@ public class TestActivity extends BaseActivity {
     }
 
     private void showNewImage() {
-        Bitmap bitmapSource = BitmapFactory.decodeResource(getResources(),
-                R.drawable.fangdong);
-        int width = bitmapSource.getWidth();
-        int height = bitmapSource.getHeight();
-        int size = Math.min(width, height);
-        Bitmap b = Bitmap.createBitmap(bitmapSource, 1, 1, size - 2, size - 2);
-        Bitmap source = Bitmap.createBitmap(b.getWidth(), b.getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(source);
-        Paint paint = new Paint();
-        paint.setShader(new BitmapShader(b, BitmapShader.TileMode.CLAMP,
-                BitmapShader.TileMode.CLAMP));
-        canvas.drawCircle((size - 2) / 2.0f, (size - 2) / 2.0f, (size - 2) / 2.0f, paint);
-        ivShow.setImageBitmap(source);
+//        Bitmap bitmapSource = BitmapFactory.decodeResource(getResources(),
+//                R.drawable.fangdong);
+//        int width = bitmapSource.getWidth();
+//        int height = bitmapSource.getHeight();
+//        int size = Math.min(width, height);
+//        Bitmap b = Bitmap.createBitmap(bitmapSource, 1, 1, size - 2, size - 2);
+//        Bitmap source = Bitmap.createBitmap(b.getWidth(), b.getHeight(), Bitmap.Config.ARGB_8888);
+//        Canvas canvas = new Canvas(source);
+//        Paint paint = new Paint();
+//        paint.setShader(new BitmapShader(b, BitmapShader.TileMode.CLAMP,
+//                BitmapShader.TileMode.CLAMP));
+//        canvas.drawCircle((size - 2) / 2.0f, (size - 2) / 2.0f, (size - 2) / 2.0f, paint);
+//        ivShow.setImageBitmap(source);
     }
 
     private void screen() {
@@ -193,24 +196,42 @@ public class TestActivity extends BaseActivity {
     }
 
     private void volley() {
-        HttpRequest.getInstance().getRequest("http://192.168.1.100:8100/" +
-                        "firew/uav/readyInfo",
-                new Parameter().add("manufactureId", "111111"), null,
-                new ResponseListener() {
-                    @Override
-                    protected void onResponse(String main, Exception error) {
-                        tvShow.setText(main);
-                        if (error == null) {
-                            tvShow.setText(main);
-                        }
-                    }
-                });
+//        HttpRequest.getInstance().getRequest("http://192.168.1.100:8100/" +
+//                        "firew/uav/readyInfo",
+//                new Parameter().add("manufactureId", "111111"), null,
+//                new ResponseListener() {
+//                    @Override
+//                    protected void onResponse(String main, Exception error) {
+//                        tvShow.setText(main);
+//                        if (error == null) {
+//                            tvShow.setText(main);
+//                        }
+//                    }
+//                });
     }
 
     private void show() {
-        tvShow.setText(String.format("%s", SPUtils.get("two", 1) + "" + SPUtils.get("one", "")));
+//        tvShow.setText(String.format("%s", SPUtils.get("two", 1) + "" + SPUtils.get("one", "")));
 
     }
+
+
+    public static void main(String[] args) {
+        boolean is = true;
+        List<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        for (String n:list){
+            if ("3".equals(n)){
+                return;
+            }
+
+        }
+        String s = "sss";
+    }
+
 
 
 }

@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.study">
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
@@ -53,8 +52,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".study_module.retrofit.Retrofit2BaseUseActivity" />
-        <activity android:name=".file.FileActivity" />
-        <activity android:name=".practice.PracticeActivity" />
         <activity android:name=".study_module.recyclerview.PulmListViewActivity" />
         <activity android:name=".study_module.loadmore_refresh.RefreshActivity">
             <intent-filter>
@@ -87,11 +84,11 @@
         <activity android:name=".study_module.mvp.google.taskdetail.TaskDetailActivity" />
         <activity android:name=".study_module.mvp.my_mvp.module_demo.TestActivity" />
         <activity android:name=".study_module.rx.retrofit_rxjava.WanAndroidActivity" />
-        <activity android:name=".study_module.rx.RxActivity" />
         <activity android:name=".study_module.rx.RxJavaTest1" />
         <activity android:name=".utils.updateapk.AndroidOPermissionActivity" />
         <activity android:name=".study_module.material.MaterialDesignActivity" />
         <activity android:name=".study_module.fragment.FragmentMainActivity" />
+        <activity android:name=".study_module.dialog.DialogTestActivity" />
     </application>
 
 </manifest>

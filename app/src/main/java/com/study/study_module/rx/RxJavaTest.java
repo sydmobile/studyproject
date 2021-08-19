@@ -95,6 +95,7 @@ public class RxJavaTest extends BaseActivity {
             @Override
             public void onCompleted() {
                 L.e("onCompleted");
+
             }
 
             @Override

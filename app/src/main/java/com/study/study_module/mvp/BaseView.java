@@ -11,4 +11,16 @@ package com.study.study_module.mvp;
 public interface BaseView {
 
     void showError(String msg);
+
+    public static void main(String[] args) {
+        int b = Integer.parseInt("11000101",2);
+        byte a = (byte)b;
+        String a1 = Integer.toBinaryString(-95);
+        System.out.println(b);
+        System.out.println(a);
+        System.out.println(a1);
+        byte aa = -1;
+        System.out.println(aa&0xFF);
+
+    }
 }

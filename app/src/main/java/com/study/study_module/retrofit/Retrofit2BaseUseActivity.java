@@ -14,6 +14,7 @@ import java.io.File;
 
 import androidx.annotation.Nullable;
 import butterknife.BindView;
+import okhttp3.FormBody;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -142,6 +143,7 @@ public class Retrofit2BaseUseActivity extends BaseActivity implements View.OnCli
             @Override
             public void onResponse(Call<TravelRoute> call, Response<TravelRoute> response) {
                 try {
+
                     tvContent.setText(response.body().getList().get(0).getRname());
                 } catch (Exception e) {
                     tvContent.setText("出现异常");

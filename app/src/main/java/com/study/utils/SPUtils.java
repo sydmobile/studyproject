@@ -6,8 +6,6 @@ import android.content.SharedPreferences;
 
 import com.study.StudyApplication;
 
-import androidx.core.content.SharedPreferencesCompat;
-
 /**
  * 说明：使用前需要先 init
  * <p>

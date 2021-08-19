@@ -1,5 +1,7 @@
 package com.study.entity;
 
+import java.io.Serializable;
+
 /**
  * 说明：微信公众号文章对象
  * <p>
@@ -8,7 +10,7 @@ package com.study.entity;
  * @author syd
  * @version 1.0
  */
-public class WXArticle {
+public class WXArticle  {
 
     // 作者
     private String author;

@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.android.volley.toolbox.StringRequest;
 import com.study.R;
 import com.study.base.BaseActivity;
 import com.study.config.AppConfig;
@@ -171,11 +170,29 @@ public class OkHttpBaseUseActivity extends BaseActivity implements View.OnClickL
      */
     public void goAsyGet() {
 
-        OkHttpClient okHttpClient = new OkHttpClient();
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .readTimeout(60,TimeUnit.SECONDS)
+                .connectTimeout(60,TimeUnit.SECONDS)
+                .cache(new Cache(new File("xx"),1024))
+                .build();
 
         Request request = new Request.Builder()
                 .url(AppConfig.URL.url_get)
                 .build();
+
+        Call call = okHttpClient.newCall(request);
+
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+            }
+        });
 
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
@@ -749,15 +766,15 @@ public class OkHttpBaseUseActivity extends BaseActivity implements View.OnClickL
 
             long t1 = System.nanoTime();
             if (IS_LOG_OK_HTTP)
-            Log.e("request:", String.format("Sending request %s on %s%n%s",
-                    request.url(), chain.connection(), request.headers()));
+                Log.e("request:", String.format("Sending request %s on %s%n%s",
+                        request.url(), chain.connection(), request.headers()));
 
             Response response = chain.proceed(request);
 
             long t2 = System.nanoTime();
             if (IS_LOG_OK_HTTP)
-            Log.e("request:", String.format("Received response for %s in %.1fms%n%s",
-                    response.request().url(), (t2 - t1) / 1e6d, response.headers()));
+                Log.e("request:", String.format("Received response for %s in %.1fms%n%s",
+                        response.request().url(), (t2 - t1) / 1e6d, response.headers()));
 
             return response;
         }
